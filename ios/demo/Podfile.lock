@@ -1,0 +1,16 @@
+PODS:
+  - StyleDictionaryDarkMode (0.0.1)
+
+DEPENDENCIES:
+  - StyleDictionaryDarkMode (from `../../`)
+
+EXTERNAL SOURCES:
+  StyleDictionaryDarkMode:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  StyleDictionaryDarkMode: 13f6e6969fa8fc3fdedae4b3248b4b6480d29526
+
+PODFILE CHECKSUM: 7a8177f0b37058043a0ced8db4d14f05269b6949
+
+COCOAPODS: 1.9.3

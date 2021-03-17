@@ -1,0 +1,46 @@
+
+{
+  color: {
+    background: {
+      primary: {
+        value: "{color.core.neutral.0.value}",
+        // Note: for darkValue and other alternative values to work
+        // they *need* to be a reference to another token. This is because
+        // only the `value` of a token is transformed. If you reference
+        // another token's value it will already be transformed. 
+        darkValue: "{color.core.neutral.800.value}",
+        hcValue: "{color.core.white.value}",
+        hcdarkValue: "{color.core.black.value}"
+      },
+      secondary: {
+        value: "{color.core.neutral.100.value}",
+        darkValue: "{color.core.neutral.900.value}"
+      },
+      tertiary: {
+        value: "{color.core.neutral.200.value}",
+        darkValue: "{color.core.neutral.800.value}"
+      },
+      danger: {
+        value: "{color.core.red.0.value}",
+        darkValue: "{color.core.red.1000.value}"
+      },
+      warning: {
+        value: "{color.core.yellow.0.value}",
+        darkValue: "{color.core.yellow.1000.value}"
+      },
+      success: {
+        value: "{color.core.green.0.value}",
+        darkValue: "{color.core.green.1000.value}"
+      },
+      info: {
+        value: "{color.core.blue.0.value}",
+        darkValue: "{color.core.blue.1000.value}"
+      },
+      disabled: {
+        value: "{color.background.tertiary.value}"
+        // no need for a dark value here because it is referencing a token
+        // with a dark value
+      }
+    }
+  }
+}

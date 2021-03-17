@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.dbanksdesign.claritydesigntokensdemo.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_components"
+        android:name="com.dbanksdesign.claritydesigntokensdemo.ComponentsFragment"
+        android:label="@string/title_components"
+        tools:layout="@layout/fragment_components" >
+        <action
+            android:id="@+id/action_navigation_components_to_navigation_button"
+            app:destination="@id/navigation_button" />
+        <action
+            android:id="@+id/action_navigation_components_to_navigation_badge"
+            app:destination="@id/navigation_badge" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_button"
+        android:name="com.dbanksdesign.claritydesigntokensdemo.ButtonFragment"
+        android:label="Buttons"
+        tools:layout="@layout/fragment_button" />
+
+    <fragment
+        android:id="@+id/navigation_badge"
+        android:name="com.dbanksdesign.claritydesigntokensdemo.BadgeFragment"
+        android:label="Badges"
+        tools:layout="@layout/fragment_badge" />
+
+    <fragment
+        android:id="@+id/navigation_tokens"
+        android:name="com.dbanksdesign.claritydesigntokensdemo.TokensFragment"
+        android:label="Tokens"
+        tools:layout="@layout/fragment_tokens">
+        <action
+            android:id="@+id/action_navigation_tokens_to_navigation_colors"
+            app:destination="@id/navigation_colors" />
+        <action
+            android:id="@+id/action_navigation_tokens_to_navigation_padding"
+            app:destination="@id/navigation_padding" />
+        <action
+            android:id="@+id/action_navigation_tokens_to_navigation_typography"
+            app:destination="@id/navigation_typography" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_colors"
+        android:name="com.dbanksdesign.claritydesigntokensdemo.ColorsFragment"
+        android:label="Colors"
+        tools:layout="@layout/fragment_colors" />
+
+    <fragment
+        android:id="@+id/navigation_padding"
+        android:name="com.dbanksdesign.claritydesigntokensdemo.PaddingFragment"
+        android:label="Padding"
+        tools:layout="@layout/fragment_padding" />
+
+    <fragment
+        android:id="@+id/navigation_typography"
+        android:name="com.dbanksdesign.claritydesigntokensdemo.TypographyFragment"
+        android:label="Typography"
+        tools:layout="@layout/fragment_typography" />
+</navigation>

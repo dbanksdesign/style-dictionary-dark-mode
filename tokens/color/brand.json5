@@ -1,0 +1,17 @@
+{
+  "color": {
+    "brand": {
+      "primary": {
+        "value": "{color.core.teal.700.value}",
+        "darkValue": "{color.core.teal.100.value}"
+      },
+      "primary-dark": { "value": "{color.core.teal.900.value}" },
+      
+      "secondary": {
+        "value": "{color.core.pink.700.value}",
+        "darkValue": "{color.core.pink.100.value}"
+      },
+      "secondary-dark": { "value": "{color.core.pink.900.value}" }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "component": {
+    "badge": {
+      "font-size": { "value": "{size.font.small.value}" },
+      "border-radius": { "value": "{size.border.radius.large.value}" },
+      // "color": { value: "{color.font.inverse.value}" },
+      // "background-color": { value: "{color.background.info.value}" },
+      
+      "variant": {
+        "danger": {
+          // "background-color": { "value": "{color.background.danger.value}" }
+        }
+      }
+    }
+  }
+}
