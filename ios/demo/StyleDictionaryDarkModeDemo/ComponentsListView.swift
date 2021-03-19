@@ -16,9 +16,9 @@ struct ComponentsListView: View {
                 NavigationLink(destination: ButtonsView()) {
                     Text("Buttons")
                 }
-//                NavigationLink(destination: BadgeView()) {
-//                    Text("Badges")
-//                }
+                NavigationLink(destination: BadgesView()) {
+                    Text("Badges")
+                }
             }.navigationBarTitle("Components")
         }
     }

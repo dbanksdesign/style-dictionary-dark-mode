@@ -18,6 +18,7 @@ struct HomeView: View {
                 RoundedRectangle(cornerRadius: 4)
                     .stroke(Color.borderPrimary, lineWidth: 1)
             )
+            Badge(text:"warning", type:.warning)
             Image.logo
             Image.map
                 .resizable()

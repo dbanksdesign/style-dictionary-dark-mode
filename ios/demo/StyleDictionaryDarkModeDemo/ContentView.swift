@@ -15,6 +15,10 @@ struct ContentView: View {
                 Image(systemName: "hexagon")
                 Text("Home")
             }
+            TokensView().tabItem {
+                Image(systemName: "hexagon")
+                Text("Tokens")
+            }
             ComponentsListView().tabItem {
                 Image(systemName: "hexagon")
                 Text("Components")

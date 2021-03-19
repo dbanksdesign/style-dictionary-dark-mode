@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2290E1D297C60E759FC837DF /* Pods_StyleDictionaryDarkModeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B20F7EBE108237B1FE66791 /* Pods_StyleDictionaryDarkModeDemo.framework */; };
+		262D668426054C0E00F9D3E6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D668326054C0E00F9D3E6 /* Badge.swift */; };
+		262D668E260557A900F9D3E6 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D668D260557A900F9D3E6 /* BackgroundView.swift */; };
+		262D669226055A1C00F9D3E6 /* TokensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D669126055A1C00F9D3E6 /* TokensView.swift */; };
 		2637BB6125F9DA37000051B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637BB6025F9DA37000051B4 /* AppDelegate.swift */; };
 		2637BB6325F9DA37000051B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637BB6225F9DA37000051B4 /* SceneDelegate.swift */; };
 		2637BB6525F9DA37000051B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637BB6425F9DA37000051B4 /* ContentView.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262D668326054C0E00F9D3E6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		262D668D260557A900F9D3E6 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		262D669126055A1C00F9D3E6 /* TokensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensView.swift; sourceTree = "<group>"; };
 		2637BB5D25F9DA37000051B4 /* StyleDictionaryDarkModeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleDictionaryDarkModeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2637BB6025F9DA37000051B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2637BB6225F9DA37000051B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +93,9 @@
 				26EA02F125F9E9E900538833 /* HomeView.swift */,
 				26EA02F325F9EAC200538833 /* ComponentsListView.swift */,
 				26EA02F525F9EB0F00538833 /* ButtonsView.swift */,
+				262D668326054C0E00F9D3E6 /* Badge.swift */,
+				262D668D260557A900F9D3E6 /* BackgroundView.swift */,
+				262D669126055A1C00F9D3E6 /* TokensView.swift */,
 			);
 			path = StyleDictionaryDarkModeDemo;
 			sourceTree = "<group>";
@@ -221,12 +230,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262D668E260557A900F9D3E6 /* BackgroundView.swift in Sources */,
+				262D668426054C0E00F9D3E6 /* Badge.swift in Sources */,
 				26EA02F625F9EB0F00538833 /* ButtonsView.swift in Sources */,
 				2637BB6125F9DA37000051B4 /* AppDelegate.swift in Sources */,
 				26EA02F225F9E9E900538833 /* HomeView.swift in Sources */,
 				2637BB6325F9DA37000051B4 /* SceneDelegate.swift in Sources */,
 				2637BB6525F9DA37000051B4 /* ContentView.swift in Sources */,
 				26EA02F425F9EAC200538833 /* ComponentsListView.swift in Sources */,
+				262D669226055A1C00F9D3E6 /* TokensView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
