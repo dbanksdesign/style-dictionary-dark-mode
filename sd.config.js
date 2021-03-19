@@ -1,88 +1,29 @@
-const StyleDictionary = require('style-dictionary');
-const attributeCTI = require('./transforms/attributeCTI');
-
-const { formattedVariables} = StyleDictionary.formatHelpers;
-
-function darkAndroid(args) {
-  const dictionary = Object.assign({}, args.dictionary);
-  // Override each token's "value" with "darkValue"
-  dictionary.allProperties = dictionary.allProperties.map(token => {
-    return Object.assign({}, token, {
-      value: token.darkValue
-    });
-  });
-  
-  // Use the built-in 'android/resources' format
-  // but with our customized dictionary object so it will output the darkValue
-  // instead of the value
-  return StyleDictionary.format['android/resources']({ ...args, dictionary })
-}
-
-function cssVariable(token) {
-  if (token.darkValue) {
-    
-  }
-}
-
-/*
-We want to output all the tokens using the value (and use output references).
-Then, for tokens with a `darkValue` we want to output those in a media query block
-*/
-
 module.exports = {
   source: [
     `tokens/**/*.+(js|json5)`
   ],
   transform: {
-    'attribute/cti': attributeCTI,
+    'attribute/cti': require('./transforms/attributeCTI'),
     'colorRGB': require('./transforms/colorRGB')
   },
   action: {
-    iOSColorAssets: require('./actions/ios/colorsets'),
-    generateSVG: require('./actions/generateSVG'),
-    iOSImages: require('./actions/ios/imagesets')
+    generateColorsets: require('./actions/ios/colorsets'),
+    generateGraphics: require('./actions/generateGraphics'),
   },
   format: {
-    darkAndroid,
+    androidDarkResources: require('./formats/androidDarkResources'),
     swiftImage: require('./formats/swiftImage'),
     swift: require('./formats/swift'),
-    darkModeCSS: ({ dictionary, options={} }) => {
-      const darkTokens = `@media (prefers-color-scheme: dark) {\n:root{\n` +
-        dictionary.allProperties
-          .filter(token => token.darkValue)
-          .map(token => {
-            let value = token.darkValue;
-            let originalValue = token.original.darkValue;
-            if (dictionary.usesReference(originalValue)) {
-              const reference = dictionary.getReference(originalValue);
-              value = `var(--${reference.name})`
-            }
-            return `--${token.name}: ${value};`
-          }) +
-          `\n}\n}`;
-      const lightTokens = `:root {` +
-      dictionary.allProperties
-        .map(token => {
-          let {value} = token;
-          let originalValue = token.original.value;
-          if (dictionary.usesReference(originalValue)) {
-            const reference = dictionary.getReference(originalValue);
-            value = `var(--${reference.name})`
-          }
-          return `--${token.name}: ${value};`
-        })
-        .join('\n') +
-        `}\n}`;
-      return `${lightTokens}\n\n${darkTokens}`;
-    }
+    cssDark: require('./formats/cssDark')
   },
   platforms: {
     css: {
       transformGroup: `css`,
-      buildPath: `build/web/`,
+      buildPath: `web/dist/`,
       files: [{
         destination: `variables.css`,
-        format: `darkModeCSS`,
+        format: `cssDark`,
+        filter: (token) => token.attributes.category !== 'image',
         options: {
           outputReferences: true
         }
@@ -111,31 +52,26 @@ module.exports = {
     },
     
     iOSColors: {
-      buildPath: "ios/dist/",
-      transforms: ["attribute/cti","colorRGB","name/ti/camel"],
-      actions: [`iOSColorAssets`]
-    },
-    
-    iOSImages: {
-      buildPath: "ios/dist/",
-      transforms: ["attribute/cti","color/hex","name/ti/camel"],
-      actions: [`iOSImages`]
+      buildPath: `ios/dist/`,
+      transforms: [`attribute/cti`,`colorRGB`,`name/ti/camel`],
+      actions: [`generateColorsets`]
     },
     
     asset: {
-      transformGroup: `assets`,
+      transforms: [`attribute/cti`,`color/hex`,`name/ti/camel`],
       buildPath: `web/dist/`,
-      androidPath: `android/designtokens/src/main/res/drawable/`,
-      actions: [`generateSVG`]
+      iosPath: `ios/dist/`,
+      androidPath: `android/designtokens/src/main/res/`,
+      actions: [`generateGraphics`]
     },
     
     android: {
-      transformGroup: "android",
-      buildPath: "android/designtokens/src/main/res/",
+      transformGroup: `android`,
+      buildPath: `android/designtokens/src/main/res/`,
       files: [{
-        destination: "values/colors.xml",
-        format: "android/resources",
-        filter: (token) => token.attributes.category === 'color',
+        destination: `values/colors.xml`,
+        format: `android/resources`,
+        filter: (token) => token.attributes.category === `color`,
         options: {
           // this is important!
           // this will keep token references intact so that we don't need
@@ -144,20 +80,24 @@ module.exports = {
           outputReferences: true
         },
       },{
-        destination: "values/font_dimens.xml",
-        format: "android/fontDimens"
+        destination: `values/font_dimens.xml`,
+        format: `android/fontDimens`
       },{
-        destination: "values/dimens.xml",
-        format: "android/dimens"
+        destination: `values/dimens.xml`,
+        format: `android/dimens`
       },{
-        destination: "values/integers.xml",
-        format: "android/integers"
+        destination: `values/integers.xml`,
+        format: `android/integers`
      },{
-        destination: "values/strings.xml",
-        format: "android/strings"
+        destination: `values/strings.xml`,
+        format: `android/strings`
       },{
-        destination: "values-night/colors.xml",
-        format: "darkAndroid",
+        // Here we are outputting a 'night' resource file that only has
+        // the colors that have dark values. All the references
+        // from the earlier file will properly reference
+        // these colors if the OS is set to night mode.
+        destination: `values-night/colors.xml`,
+        format: `androidDarkResources`,
         filter: (token) => token.darkValue
       }]
     },
