@@ -13,12 +13,7 @@ import StyleDictionaryDarkMode
 struct HomeView: View {
     var body: some View {
         VStack {
-            Text("Hello, World!").foregroundColor(Color.coreRed200)
-            .overlay(
-                RoundedRectangle(cornerRadius: 4)
-                    .stroke(Color.borderPrimary, lineWidth: 1)
-            )
-            Badge(text:"warning", type:.warning)
+            Text("Hello, World!").foregroundColor(Color.fontPrimary)
             Image.logo
             Image.map
                 .resizable()
