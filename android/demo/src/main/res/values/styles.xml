@@ -1,18 +1,40 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/color_core_aqua_1000</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/color_core_pink_700</item>
         <item name="colorOnPrimary">@color/color_font_inverse</item>
         <item name="colorOnSurface">@color/color_font_primary</item>
         <item name="colorSurface">@color/color_background_primary</item>
         <item name="android:colorBackground">@color/color_background_primary</item>
     </style>
 
+
     <style name="DTButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="backgroundTint">@color/component_button_outline_background_color</item>
         <item name="strokeColor">@color/component_button_outline_border_color</item>
+    </style>
+
+    <style name="DTBadge" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="android:textColor">@color/component_badge_color</item>
+        <item name="chipBackgroundColor">@color/component_badge_background_color</item>
+    </style>
+
+    <style name="DTBadge.Danger">
+        <item name="android:textColor">@color/component_badge_variant_danger_color</item>
+        <item name="chipBackgroundColor">@color/component_badge_variant_danger_background_color</item>
+    </style>
+
+    <style name="DTBadge.Warning">
+        <item name="android:textColor">@color/component_badge_variant_warning_color</item>
+        <item name="chipBackgroundColor">@color/component_badge_variant_warning_background_color</item>
+    </style>
+
+    <style name="DTBadge.Success">
+        <item name="android:textColor">@color/component_badge_variant_success_color</item>
+        <item name="chipBackgroundColor">@color/component_badge_variant_success_background_color</item>
     </style>
 </resources>

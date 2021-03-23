@@ -11,7 +11,7 @@ function cssDark({ dictionary, options={} }) {
         return `  --${token.name}: ${value};`
       })
       .join('\n') +
-    `}\n}`;
+    `\n}\n`;
 
   const darkTokens = `@media (prefers-color-scheme: dark) {\n:root {\n` +
     dictionary.allProperties
