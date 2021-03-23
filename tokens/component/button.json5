@@ -7,7 +7,11 @@
       "border-radius": { "value": "{size.border.radius.small.value}" },
       
       "primary": {
-        "background-color": { "value": "{color.brand.primary.value}" },
+        "background-color": {
+          "value": "{color.brand.primary.value}",
+          // Having some component tokens with a dark value works too!
+          "darkValue": "{color.brand.secondary.value}"
+        },
         "color": { "value": "{color.font.inverse.value}" }
       },
       

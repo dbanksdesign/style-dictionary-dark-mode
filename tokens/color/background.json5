@@ -21,8 +21,8 @@
         darkValue: "{color.core.neutral.800.value}"
       },
       danger: {
-        value: "{color.core.red.0.value}",
-        darkValue: "{color.core.red.1000.value}"
+        value: "{color.core.purple.0.value}",
+        darkValue: "{color.core.purple.1000.value}"
       },
       warning: {
         value: "{color.core.yellow.0.value}",

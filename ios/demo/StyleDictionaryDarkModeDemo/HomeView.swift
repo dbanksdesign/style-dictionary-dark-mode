@@ -14,6 +14,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             Text("Hello, World!").foregroundColor(Color.fontPrimary)
+                .background(Color.buttonPrimaryBackgroundColor)
             Image.logo
             Image.map
                 .resizable()

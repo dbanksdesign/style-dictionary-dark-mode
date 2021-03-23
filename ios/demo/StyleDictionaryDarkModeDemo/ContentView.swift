@@ -12,18 +12,18 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeView().tabItem {
-                Image(systemName: "hexagon")
+                Image(systemName: "paperplane")
                 Text("Home")
             }
             TokensView().tabItem {
-                Image(systemName: "hexagon")
+                Image(systemName: "paintbrush.pointed")
                 Text("Tokens")
             }
             ComponentsListView().tabItem {
-                Image(systemName: "hexagon")
+                Image(systemName: "wallet.pass")
                 Text("Components")
             }
-        }
+        }.accentColor(Color.brandPrimary)
     }
 }
 

@@ -6,6 +6,10 @@ module.exports = {
     },
     map: {
       value: "assets/svg/map.svg"
+    },
+    appIcon: {
+      value: "assets/svg/logo.svg",
+      sizes: []
     }
   },
 }

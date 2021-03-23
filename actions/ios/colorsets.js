@@ -11,7 +11,10 @@ module.exports = {
     const assetPath = `${platform.buildPath}/StyleDictionary.xcassets`;
     
     dictionary.allProperties
-      .filter(token => token.attributes.category === `color`)
+      .filter(token => token.attributes.category === `color` &&
+        (!dictionary.usesReference(token.original.value) || token.darkValue))
+        // we only need colorsets for tokens that have a dark value or
+        // are not a reference
       .forEach(token => {
         const colorset = {
           colors: [],

@@ -21,6 +21,8 @@ extension Color {\n` +
           const reference = dictionary.getReference(token.original.value);
           value = reference.name;
         }
+      } else {
+        value = token.name;
       }
       return `  public static var ${token.name}: Color {
     return Color.init("${value}", bundle: bundle)
