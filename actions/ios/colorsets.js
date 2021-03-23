@@ -7,71 +7,55 @@ const { contents, darkAppearance, idiom, hcAppearance } = require('./consts');
  * mode versions. A colorset
  */
 module.exports = {
+  // This is going to run once per theme.
   do: (dictionary, platform) => {
     const assetPath = `${platform.buildPath}/StyleDictionary.xcassets`;
     
+    // We somehow need to know to only apply certain colors
+    // depending on the theme being run. 
+    // Also, if you run this multiple times it shouldn't break...
     dictionary.allProperties
       .filter(token => token.attributes.category === `color`)
       .forEach(token => {
-        const colorset = {
-          colors: [],
-          ...contents
+        // try to read the colorset first, if it exists we will modify
+        // it and save it
+        const colorsetPath = `${assetPath}/${token.name}.colorset`;
+        let colorset;
+        fs.ensureDirSync(colorsetPath);
+        if (!fs.existsSync(`${colorsetPath}/Contents.json`)) {
+          // no contents defined yet, we will create one now
+          colorset = {
+            colors: [],
+            ...contents
+          }
+        } else {
+          colorset = fs.readJsonSync(`${colorsetPath}/Contents.json`);
         }
 
-        // default light value
-        colorset.colors.push({
+        const color = {
           idiom,
           color: {
             'color-space': `srgb`,
             components: token.value
-          },
-        });
+          }
+        };
         
-        if (token.darkValue) {
-          colorset.colors.push({
-            idiom,
-            color: {
-              'color-space': `srgb`,
-              components: token.darkValue
-            },
-            appearances: [darkAppearance]
-          });
+        
+        if (platform.theme === `dark`) {
+          color.appearances = [darkAppearance]
         }
         
-        if (token.hcValue) {
-          colorset.colors.push({
-            idiom,
-            appearances: [hcAppearance],
-            color: {
-              'color-space': 'srgb',
-              components: token.hcValue
-            }
-          });
-        }
+        colorset.colors.push(color);
         
-        if (token.hcdarkValue) {
-          colorset.colors.push({
-            idiom,
-            color: {
-              'color-space': 'srgb',
-              components: token.hcdarkValue
-            },
-            appearances: [hcAppearance, darkAppearance]
-          });
-        }
-        
-        const colorsetPath = `${assetPath}/${token.name}.colorset`;
-        
-        fs.ensureDirSync(colorsetPath);
         fs.writeFileSync(`${colorsetPath}/Contents.json`, JSON.stringify(colorset, null, 2));
       });
-      
+      fs.ensureDirSync(assetPath)
       fs.writeFileSync(`${assetPath}/Contents.json`, JSON.stringify(contents, null, 2));
   },
   undo: function(dictionary, platform) {
     dictionary.allProperties
       .filter(token => {
-        return token.attributes.category === `image`
+        return token.attributes.category === `color`
       })
       .forEach(token => {
         const assetPath = `${platform.buildPath}/StyleDictionary.xcassets`;

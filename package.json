@@ -4,8 +4,7 @@
   "description": "",
   "main": "build.js",
   "scripts": {
-    "clean": "style-dictionary clean --config ./sd.config.js",
-    "start": "style-dictionary build --config ./sd.config.js"
+    "start": "node build.js"
   },
   "repository": {
     "type": "git",

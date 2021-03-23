@@ -1,10 +1,7 @@
 {
   "color": {
     "border": {
-      "primary": {
-        "value": "{color.core.neutral.400.value}",
-        darkValue: "{color.core.neutral.100.value}"
-      },
+      "primary": { "value": "{color.core.neutral.400.value}" },
       "secondary": { "value": "{color.core.neutral.200.value}" },
       "tertiary": { "value": "{color.core.neutral.100.value}" }
     }

@@ -1,0 +1,18 @@
+
+{
+  color: {
+    background: {
+      primary: { value: "{color.core.neutral.1000.value}" },
+      secondary: { value: "{color.core.neutral.900.value}" },
+      tertiary: { value: "{color.core.neutral.800.value}" },
+      danger: { value: "{color.core.red.1000.value}" },
+      warning: { value: "{color.core.yellow.1000.value}" },
+      success: { value: "{color.core.green.1000.value}" },
+      info: { value: "{color.core.blue.1000.value}" },
+      disabled: {
+        // no need for a dark value here because it is referencing a token
+        // with a dark value
+      }
+    }
+  }
+}

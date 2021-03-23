@@ -5,14 +5,14 @@ const androidVector = require('./androidVector');
 
 module.exports = {
   do: (dictionary, config) => {
-    const { androidPath, iosPath, buildPath } = config;
+    const { androidPath, iosPath, buildPath, theme } = config;
     dictionary.allProperties
       .filter(token => {
         return token.attributes.category === `image`
       })
       .forEach(token => {
-        const { name, value, darkValue } = token;
-        let svg, svgDark;
+        const { name, value } = token;
+        
         // Read the file from the token's value and turn it into a lodash template
         const src = template( fs.readFileSync(value) );
         
@@ -21,33 +21,23 @@ module.exports = {
         svg = src(dictionary.properties);
         
         // Make sure the directory exists and write the new SVG file
-        const outputPath = `${buildPath||''}${name}.svg`;
+        const outputPath = `${buildPath||''}${name}-${theme}.svg`;
         fs.ensureFileSync(outputPath);
         fs.writeFileSync(outputPath, svg);
         console.log(`✔︎  ${outputPath}`);
-        
-        if (darkValue) {
-          const src = template( fs.readFileSync(darkValue) );
-          svgDark = src(dictionary.properties);
-          
-          const outputPath = `${buildPath||''}${name}-dark.svg`;
-          fs.ensureFileSync(outputPath);
-          fs.writeFileSync(outputPath, svgDark);
-          console.log(`✔︎  ${outputPath}`);
-        }
         
         androidVector({
           androidPath,
           name,
           svg,
-          svgDark
+          theme
         });
         
         generateImageset({
           iosPath,
           name,
           svg,
-          svgDark
+          theme
         });
       });
   },
