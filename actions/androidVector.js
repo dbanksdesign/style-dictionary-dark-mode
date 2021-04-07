@@ -1,9 +1,9 @@
 const fs = require('fs-extra');
 const s2v = require('svg2vectordrawable');
 
-function androidVector({ androidPath, svg, name, theme }) {
+function androidVector({ androidPath, svg, name, mode }) {
   let outputPath;
-  if (theme === `dark`) {
+  if (mode === `dark`) {
     outputPath = `${androidPath}drawable-night/${name}.xml`;
   } else {
     outputPath = `${androidPath}drawable/${name}.xml`;

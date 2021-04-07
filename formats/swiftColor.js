@@ -5,7 +5,6 @@ import SwiftUI
 
 class DarkModeDesignTokens {}
 let bundle = Bundle(for: DarkModeDesignTokens.self)
-let uitrait = UITraitCollection.init();
 
 extension Color {\n` +
   dictionary.allProperties.map(token => {

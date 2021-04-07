@@ -1,15 +1,23 @@
 const StyleDictionary = require('style-dictionary');
 const fs = require('fs-extra');
 
-const androidPath = `android/designtokens/src/main/res/`;
+const iosPath = `ios/dist/`;
+const androidPath = `android/styledictionary/src/main/res/`;
+const webPath = `web/dist/`;
 
-// before this runs we need to clean the iOS directory or else the
-// colorset generation won't work as intended.
-fs.removeSync(`ios/dist`);
+// before this runs we should clean the directories we are generating files in
+// to make sure they are ✨clean✨
+console.log(`cleaning ${iosPath}...`);
+fs.removeSync(iosPath);
+console.log(`cleaning ${androidPath}...`);
 fs.removeSync(androidPath);
+console.log(`cleaning ${webPath}...`);
+fs.removeSync(webPath);
 
-[`light`,`dark`].forEach(theme => {
-  console.log(`Building ${theme} theme...`);
+const modes = [`light`,`dark`];
+
+modes.forEach(mode => {
+  console.log(`Building ${mode} mode...`);
   
   let androidColor = {
     destination: `values/colors.xml`,
@@ -24,7 +32,7 @@ fs.removeSync(androidPath);
     },
   };
   
-  if (theme === `dark`) {
+  if (mode === `dark`) {
     androidColor = {
       destination: `values-night/colors.xml`,
       format: `android/resources`,
@@ -36,30 +44,34 @@ fs.removeSync(androidPath);
     // Using the include array so that theme token overrides don't show
     // warnings in the console. 
     include: [
-      `tokens/**/*.+(js|json5)`
+      `tokens/**/*!(.${modes.join(`|`)}).+(js|json5)`
     ],
     source: [
       // I know there are no "light" tokens, because default is light mode
-      `${theme}-tokens/**/*.+(js|json5)`
+      `tokens/**/*.${mode}.+(js|json5)`
     ],
+    // custom actions
     action: {
       generateColorsets: require('./actions/ios/colorsets'),
       generateGraphics: require('./actions/generateGraphics'),
     },
+    // custom transforms
     transform: {
       'attribute/cti': require('./transforms/attributeCTI'),
       'colorRGB': require('./transforms/colorRGB')
     },
+    // custom formats
     format: {
       swiftColor: require('./formats/swiftColor'),
       swiftImage: require('./formats/swiftImage'),
     },
+    
     platforms: {
       css: {
         transformGroup: `css`,
-        buildPath: `web/dist/`,
+        buildPath: webPath,
         files: [{
-          destination: `variables-${theme}.css`,
+          destination: `variables-${mode}.css`,
           format: `css/variables`,
           filter: (token) => token.attributes.category !== 'image',
           options: {
@@ -69,7 +81,7 @@ fs.removeSync(androidPath);
       },
       // TODO: we don't need to generate these multiple times
       iOS: {
-        buildPath: `ios/dist/`,
+        buildPath: iosPath,
         transforms: [`attribute/cti`,`name/ti/camel`,`size/swift/remToCGFloat`],
         files: [{
           destination: `Color.swift`,
@@ -79,7 +91,7 @@ fs.removeSync(androidPath);
             outputReferences: true
           }
         },{
-          destination: `StyleDictionary.swift`,
+          destination: `Size.swift`,
           filter: (token) => token.attributes.category === `size`,
           className: `Size`,
           format: `ios-swift/class.swift`
@@ -91,18 +103,18 @@ fs.removeSync(androidPath);
       },
       
       iOSColors: {
-        buildPath: `ios/dist/`,
-        theme,
+        buildPath: iosPath,
+        mode,
         transforms: [`attribute/cti`,`colorRGB`,`name/ti/camel`],
         actions: [`generateColorsets`]
       },
       
       asset: {
-        theme,
+        mode,
         transforms: [`attribute/cti`,`color/hex`,`name/ti/camel`],
-        buildPath: `web/dist/`,
-        iosPath: `ios/dist/`,
-        androidPath: `android/designtokens/src/main/res/`,
+        buildPath: webPath,
+        iosPath,
+        androidPath,
         actions: [`generateGraphics`]
       },
       

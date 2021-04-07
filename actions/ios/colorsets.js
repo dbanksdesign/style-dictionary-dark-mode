@@ -41,7 +41,7 @@ module.exports = {
         };
         
         
-        if (platform.theme === `dark`) {
+        if (platform.mode === `dark`) {
           color.appearances = [darkAppearance]
         }
         
