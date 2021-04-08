@@ -20,6 +20,7 @@
 		26EA02F225F9E9E900538833 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EA02F125F9E9E900538833 /* HomeView.swift */; };
 		26EA02F425F9EAC200538833 /* ComponentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EA02F325F9EAC200538833 /* ComponentsListView.swift */; };
 		26EA02F625F9EB0F00538833 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EA02F525F9EB0F00538833 /* ButtonsView.swift */; };
+		26F9E2DB261D0977001A1638 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F9E2DA261D0977001A1638 /* BorderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		26EA02F125F9E9E900538833 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26EA02F325F9EAC200538833 /* ComponentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsListView.swift; sourceTree = "<group>"; };
 		26EA02F525F9EB0F00538833 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		26F9E2DA261D0977001A1638 /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		4DF2E108355E993D2C1B4839 /* Pods-StyleDictionaryDarkModeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyleDictionaryDarkModeDemo.release.xcconfig"; path = "Target Support Files/Pods-StyleDictionaryDarkModeDemo/Pods-StyleDictionaryDarkModeDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5E67F3879D24EC425BBDBAC8 /* Pods-StyleDictionaryDarkModeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyleDictionaryDarkModeDemo.debug.xcconfig"; path = "Target Support Files/Pods-StyleDictionaryDarkModeDemo/Pods-StyleDictionaryDarkModeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6B20F7EBE108237B1FE66791 /* Pods_StyleDictionaryDarkModeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StyleDictionaryDarkModeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				262D668326054C0E00F9D3E6 /* Badge.swift */,
 				262D668D260557A900F9D3E6 /* BackgroundView.swift */,
 				262D669126055A1C00F9D3E6 /* TokensView.swift */,
+				26F9E2DA261D0977001A1638 /* BorderView.swift */,
 			);
 			path = StyleDictionaryDarkModeDemo;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				2637BB6325F9DA37000051B4 /* SceneDelegate.swift in Sources */,
 				2637BB6525F9DA37000051B4 /* ContentView.swift in Sources */,
 				26EA02F425F9EAC200538833 /* ComponentsListView.swift in Sources */,
+				26F9E2DB261D0977001A1638 /* BorderView.swift in Sources */,
 				262D669226055A1C00F9D3E6 /* TokensView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

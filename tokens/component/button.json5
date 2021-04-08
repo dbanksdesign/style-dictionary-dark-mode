@@ -8,18 +8,41 @@
       
       "primary": {
         "background-color": {
-          "value": "{color.brand.primary.value}",
+          "value": "{color.brand.primary.600.value}",
           // Having some component tokens with a dark value works too!
-          "darkValue": "{color.brand.secondary.value}"
+          "darkValue": "{color.brand.secondary.600.value}"
         },
-        "color": { "value": "{color.font.inverse.value}" }
+        "color": { "value": "{color.font.inverse.value}" },
+        
+        // hover state
+        "hover": {
+          "background-color": { "value": "{color.brand.primary.400.value}" },
+          "color": { "value": "{color.font.inverse.value}" },
+        },
+        
+        // active state
+        "active": {
+          "background-color": { "value": "{color.brand.primary.200.value}" },
+          "color": { "value": "{color.font.inverse.value}" },
+        }
       },
       
       "outline": {
-        // "color": { "value": "{component.button.color.value}" },
+        "color": { "value": "{color.font.interactive.value}" },
         "background-color": { "value": "{color.background.primary.value}" },
         "border-width": { "value": "{size.border.width.medium.value}" },
-        "border-color": { "value": "{color.border.primary.value}" }
+        "border-color": { "value": "{color.brand.primary.400.value}" },
+        
+        "hover": {
+          "color": { "value": "{color.font.hover.value}" },
+          "border-color": { "value": "{color.border.hover.value}" },
+        },
+        
+        "active": {
+          "color": { "value": "{color.font.active.value}" },
+          "border-color": { "value": "{color.border.active.value}" },
+          "background-color": { "value": "{component.button.outline.background-color.value}" }
+        }
       }
     }
   }

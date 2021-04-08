@@ -13,8 +13,12 @@ import StyleDictionaryDarkMode
 struct HomeView: View {
     var body: some View {
         VStack {
-            Text("Hello, World!").foregroundColor(Color.fontPrimary)
+            Text("Hello, World!")
+                .foregroundColor(Color.fontPrimary)
                 .background(Color.buttonPrimaryBackgroundColor)
+            Button("Press Me") {
+                print("Button pressed")
+            }.buttonStyle(PrimaryButton())
             Image.logo
             Image.map
                 .resizable()

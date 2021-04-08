@@ -16,7 +16,10 @@ struct TokensView: View {
                 NavigationLink(destination: BackgroundView()) {
                     Text("Background Colors")
                 }
+                NavigationLink(destination: BorderView()) {
+                    Text("Border Colors")
+                }
             }.navigationBarTitle("Tokens")
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

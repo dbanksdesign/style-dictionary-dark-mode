@@ -20,6 +20,6 @@ struct ComponentsListView: View {
                     Text("Badges")
                 }
             }.navigationBarTitle("Components")
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

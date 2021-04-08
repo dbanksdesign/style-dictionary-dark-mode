@@ -40,6 +40,7 @@ struct BackgroundView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.backgroundPrimary)
+        .navigationBarTitle("Background Colors")
     }
 }
 

@@ -18,9 +18,11 @@
         "darkValue": "{color.core.neutral.1000.value}"
       },
       
-      "interactive": { "value": "{color.brand.primary.value}" },
-      "hover": { "value": "{color.brand.primary.value}" },
-      "active": { "value": "{color.brand.secondary.value}" },
+      // these tokens reference tokens with darkValues,
+      // no need to define darkValues for them
+      "interactive": { "value": "{color.brand.primary.600.value}" },
+      "hover": { "value": "{color.brand.primary.800.value}" },
+      "active": { "value": "{color.brand.secondary.600.value}" },
       "disabled": { "value": "{color.font.tertiary.value}" },
       
       "danger": {
