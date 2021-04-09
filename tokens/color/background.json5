@@ -5,6 +5,7 @@
       primary: { value: "{color.core.white.value}" },
       secondary: { value: "{color.core.neutral.100.value}" },
       tertiary: { value: "{color.core.neutral.200.value}" },
+      
       danger: { value: "{color.core.red.0.value}" },
       warning: { value: "{color.core.yellow.0.value}" },
       success: { value: "{color.core.green.0.value}" },

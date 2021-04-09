@@ -32,12 +32,31 @@ modes.forEach(mode => {
     },
   };
   
+  let cssVarFile = {
+    destination: `variables-${mode}.css`,
+    format: `css/variables`,
+    
+    options: {
+      selector: `body`,
+      outputReferences: true
+    }
+  }
+  
   if (mode === `dark`) {
     androidColor = {
       destination: `values-night/colors.xml`,
       format: `android/resources`,
       filter: (token) => token.filePath.indexOf('dark') > -1
-    }
+    };
+    cssVarFile = {
+      destination: `variables-${mode}.css`,
+      format: `css/variables`,
+      filter: (token) => token.filePath.indexOf(mode) > -1,
+      options: {
+        selector: `.dark`,
+        outputReferences: true
+      }
+    };
   }
   
   StyleDictionary.extend({
@@ -64,20 +83,20 @@ modes.forEach(mode => {
     format: {
       swiftColor: require('./formats/swiftColor'),
       swiftImage: require('./formats/swiftImage'),
+      css: function(opts) {
+        return `@media (prefers-color-scheme: dark) {\n` +
+          StyleDictionary.format['css/variables'](opts) +
+          `\n}\n`;
+      }
     },
     
     platforms: {
       css: {
         transformGroup: `css`,
         buildPath: webPath,
-        files: [{
-          destination: `variables-${mode}.css`,
-          format: `css/variables`,
-          filter: (token) => token.attributes.category !== 'image',
-          options: {
-            outputReferences: true
-          }
-        }]
+        files: [
+          cssVarFile
+        ]
       },
       // TODO: we don't need to generate these multiple times
       iOS: {

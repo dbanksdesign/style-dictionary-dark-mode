@@ -15,11 +15,12 @@ struct ComponentsListView: View {
             List() {
                 NavigationLink(destination: ButtonsView()) {
                     Text("Buttons")
-                }
+                }.listRowBackground(Color.backgroundPrimary)
                 NavigationLink(destination: BadgesView()) {
                     Text("Badges")
-                }
+                }.listRowBackground(Color.backgroundPrimary)
             }.navigationBarTitle("Components")
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
+        .background(Color.backgroundPrimary)
     }
 }

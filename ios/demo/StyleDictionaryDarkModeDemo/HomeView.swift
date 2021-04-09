@@ -13,15 +13,13 @@ import StyleDictionaryDarkMode
 struct HomeView: View {
     var body: some View {
         VStack {
-            Text("Hello, World!").foregroundColor(Color.fontPrimary)
             Image.logo
-            Image.map
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100, alignment: .center)
+            Text("Dark mode with style dictionary")
+                .foregroundColor(Color.fontPrimary)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(Color.backgroundPrimary)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

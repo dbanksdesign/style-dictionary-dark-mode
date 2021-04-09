@@ -22,7 +22,7 @@
     "fs-extra": "^9.1.0",
     "lodash": "^4.17.21",
     "sharp": "^0.27.2",
-    "style-dictionary": "^3.0.0-rc.6",
+    "style-dictionary": "^3.0.0-rc.8",
     "svg2vectordrawable": "^2.6.26",
     "tinycolor2": "^1.4.2"
   }

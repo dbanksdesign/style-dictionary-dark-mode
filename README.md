@@ -47,3 +47,9 @@ Output and demo directories
 * **ios/demo** iOS demo
 * **web/dist** Generated Style Dictionary files for web
 * **web/demo**
+
+
+
+## Special thanks
+
+* SVG graphics from [undraw.co](https://undraw.co/)
