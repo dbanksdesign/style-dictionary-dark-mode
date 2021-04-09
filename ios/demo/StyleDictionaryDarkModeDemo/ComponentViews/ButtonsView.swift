@@ -62,6 +62,10 @@ struct ButtonsView: View {
             Button("Outline") {
                 print("Outline Button pressed")
             }.buttonStyle(OutlineButton())
-        }.navigationBarTitle("Buttons")
+        }
+        .navigationBarTitle("Buttons")
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color.backgroundPrimary)
+        .edgesIgnoringSafeArea(.all)
     }
 }

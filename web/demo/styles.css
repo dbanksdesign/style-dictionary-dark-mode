@@ -1,5 +1,5 @@
 body {
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-background-primary);
   color: var(--color-font-primary);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

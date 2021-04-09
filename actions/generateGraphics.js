@@ -40,7 +40,7 @@ module.exports = {
         
         if (darkValue) {
           const src = template( fs.readFileSync(darkValue) );
-          const svgDark = src(dictionary.properties);
+          svgDark = src(dictionary.properties);
           
           const outputPath = `${buildPath||''}${name}-dark.svg`;
           fs.ensureFileSync(outputPath);

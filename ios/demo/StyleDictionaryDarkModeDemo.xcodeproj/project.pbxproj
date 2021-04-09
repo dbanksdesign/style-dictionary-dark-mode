@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2290E1D297C60E759FC837DF /* Pods_StyleDictionaryDarkModeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B20F7EBE108237B1FE66791 /* Pods_StyleDictionaryDarkModeDemo.framework */; };
+		261FC6B92620102300799D05 /* FontColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FC6B82620102300799D05 /* FontColorView.swift */; };
+		261FC6BE2620BBEE00799D05 /* BackgroundColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261FC6BD2620BBEE00799D05 /* BackgroundColorView.swift */; };
 		262D668426054C0E00F9D3E6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D668326054C0E00F9D3E6 /* Badge.swift */; };
-		262D668E260557A900F9D3E6 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D668D260557A900F9D3E6 /* BackgroundView.swift */; };
 		262D669226055A1C00F9D3E6 /* TokensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D669126055A1C00F9D3E6 /* TokensView.swift */; };
 		2637BB6125F9DA37000051B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637BB6025F9DA37000051B4 /* AppDelegate.swift */; };
 		2637BB6325F9DA37000051B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637BB6225F9DA37000051B4 /* SceneDelegate.swift */; };
@@ -24,8 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		261FC6B82620102300799D05 /* FontColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontColorView.swift; sourceTree = "<group>"; };
+		261FC6BD2620BBEE00799D05 /* BackgroundColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorView.swift; sourceTree = "<group>"; };
 		262D668326054C0E00F9D3E6 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
-		262D668D260557A900F9D3E6 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		262D669126055A1C00F9D3E6 /* TokensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensView.swift; sourceTree = "<group>"; };
 		2637BB5D25F9DA37000051B4 /* StyleDictionaryDarkModeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleDictionaryDarkModeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2637BB6025F9DA37000051B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		261FC6BB2620B93400799D05 /* TokenViews */ = {
+			isa = PBXGroup;
+			children = (
+				262D669126055A1C00F9D3E6 /* TokensView.swift */,
+				26F9E2DA261D0977001A1638 /* BorderView.swift */,
+				261FC6B82620102300799D05 /* FontColorView.swift */,
+				261FC6BD2620BBEE00799D05 /* BackgroundColorView.swift */,
+			);
+			path = TokenViews;
+			sourceTree = "<group>";
+		};
+		261FC6C12620C6E600799D05 /* ComponentViews */ = {
+			isa = PBXGroup;
+			children = (
+				26EA02F325F9EAC200538833 /* ComponentsListView.swift */,
+				26EA02F525F9EB0F00538833 /* ButtonsView.swift */,
+				262D668326054C0E00F9D3E6 /* Badge.swift */,
+			);
+			path = ComponentViews;
+			sourceTree = "<group>";
+		};
 		2637BB5425F9DA37000051B4 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +108,8 @@
 		2637BB5F25F9DA37000051B4 /* StyleDictionaryDarkModeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				261FC6C12620C6E600799D05 /* ComponentViews */,
+				261FC6BB2620B93400799D05 /* TokenViews */,
 				2637BB6025F9DA37000051B4 /* AppDelegate.swift */,
 				2637BB6225F9DA37000051B4 /* SceneDelegate.swift */,
 				2637BB6425F9DA37000051B4 /* ContentView.swift */,
@@ -93,12 +118,6 @@
 				2637BB6E25F9DA3A000051B4 /* Info.plist */,
 				2637BB6825F9DA3A000051B4 /* Preview Content */,
 				26EA02F125F9E9E900538833 /* HomeView.swift */,
-				26EA02F325F9EAC200538833 /* ComponentsListView.swift */,
-				26EA02F525F9EB0F00538833 /* ButtonsView.swift */,
-				262D668326054C0E00F9D3E6 /* Badge.swift */,
-				262D668D260557A900F9D3E6 /* BackgroundView.swift */,
-				262D669126055A1C00F9D3E6 /* TokensView.swift */,
-				26F9E2DA261D0977001A1638 /* BorderView.swift */,
 			);
 			path = StyleDictionaryDarkModeDemo;
 			sourceTree = "<group>";
@@ -233,7 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				262D668E260557A900F9D3E6 /* BackgroundView.swift in Sources */,
+				261FC6B92620102300799D05 /* FontColorView.swift in Sources */,
 				262D668426054C0E00F9D3E6 /* Badge.swift in Sources */,
 				26EA02F625F9EB0F00538833 /* ButtonsView.swift in Sources */,
 				2637BB6125F9DA37000051B4 /* AppDelegate.swift in Sources */,
@@ -242,6 +261,7 @@
 				2637BB6525F9DA37000051B4 /* ContentView.swift in Sources */,
 				26EA02F425F9EAC200538833 /* ComponentsListView.swift in Sources */,
 				26F9E2DB261D0977001A1638 /* BorderView.swift in Sources */,
+				261FC6BE2620BBEE00799D05 /* BackgroundColorView.swift in Sources */,
 				262D669226055A1C00F9D3E6 /* TokensView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,7 +413,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.djb.StyleDictionaryDarkModeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -414,7 +434,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.djb.StyleDictionaryDarkModeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

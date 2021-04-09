@@ -7,11 +7,11 @@
       },
       "secondary": {
         "value": "{color.core.neutral.900.value}",
-        "darkValue": "{color.core.neutral.100.value}"
+        "darkValue": "{color.core.neutral.200.value}"
       },
       "tertiary": {
         "value": "{color.core.neutral.800.value}",
-        "darkValue": "{color.core.neutral.200.value}"
+        "darkValue": "{color.core.neutral.400.value}"
       },
       "inverse": {
         "value": "{color.core.neutral.0.value}",
