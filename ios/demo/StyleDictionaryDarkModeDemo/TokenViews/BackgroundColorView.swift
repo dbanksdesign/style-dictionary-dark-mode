@@ -41,15 +41,11 @@ struct BackgroundColorView: View {
                         BackgroundRow(label:"Tertiary", color:Color.backgroundTertiary)
                     }
                     Group {
-//                        BackgroundRow(label:"Interactive", color:Color.backgroundInteractive)
-//                        BackgroundRow(label:"Hover", color:Color.backgroundHover)
-//                        BackgroundRow(label:"Active", color:Color.backgroundActive)
                         BackgroundRow(label:"Disabled", color:Color.backgroundDisabled)
-                    }
-                    Group {
                         BackgroundRow(label:"Danger", color:Color.backgroundDanger)
                         BackgroundRow(label:"Warning", color:Color.backgroundWarning)
                         BackgroundRow(label:"Success", color:Color.backgroundSuccess)
+                        BackgroundRow(label:"Info", color:Color.backgroundInfo)
                     }
                 }
             }

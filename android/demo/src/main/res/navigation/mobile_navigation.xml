@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.dbanksdesign.claritydesigntokensdemo.HomeFragment"
+        android:name="com.dbanksdesign.styledictionarydarkmode.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_components"
-        android:name="com.dbanksdesign.claritydesigntokensdemo.ComponentsFragment"
+        android:name="com.dbanksdesign.styledictionarydarkmode.ComponentsFragment"
         android:label="@string/title_components"
         tools:layout="@layout/fragment_components" >
         <action
@@ -26,47 +26,53 @@
 
     <fragment
         android:id="@+id/navigation_button"
-        android:name="com.dbanksdesign.claritydesigntokensdemo.ButtonFragment"
+        android:name="com.dbanksdesign.styledictionarydarkmode.ButtonFragment"
         android:label="Buttons"
         tools:layout="@layout/fragment_button" />
 
     <fragment
         android:id="@+id/navigation_badge"
-        android:name="com.dbanksdesign.claritydesigntokensdemo.BadgeFragment"
+        android:name="com.dbanksdesign.styledictionarydarkmode.BadgeFragment"
         android:label="Badges"
         tools:layout="@layout/fragment_badge" />
 
     <fragment
         android:id="@+id/navigation_tokens"
-        android:name="com.dbanksdesign.claritydesigntokensdemo.TokensFragment"
+        android:name="com.dbanksdesign.styledictionarydarkmode.TokensFragment"
         android:label="Tokens"
         tools:layout="@layout/fragment_tokens">
         <action
-            android:id="@+id/action_navigation_tokens_to_navigation_colors"
-            app:destination="@id/navigation_colors" />
+            android:id="@+id/action_navigation_tokens_to_navigation_background_colors"
+            app:destination="@id/navigation_background_colors" />
         <action
-            android:id="@+id/action_navigation_tokens_to_navigation_padding"
-            app:destination="@id/navigation_padding" />
+            android:id="@+id/action_navigation_tokens_to_navigation_border_colors"
+            app:destination="@id/navigation_border_colors" />
         <action
-            android:id="@+id/action_navigation_tokens_to_navigation_typography"
-            app:destination="@id/navigation_typography" />
+            android:id="@+id/action_navigation_tokens_to_navigation_font_colors"
+            app:destination="@id/navigation_font_colors" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_colors"
-        android:name="com.dbanksdesign.claritydesigntokensdemo.ColorsFragment"
-        android:label="Colors"
-        tools:layout="@layout/fragment_colors" />
+        android:id="@+id/navigation_background_colors"
+        android:name="com.dbanksdesign.styledictionarydarkmode.BackgroundColorsFragment"
+        android:label="Background colors"
+        tools:layout="@layout/fragment_background_colors" />
 
     <fragment
-        android:id="@+id/navigation_padding"
-        android:name="com.dbanksdesign.claritydesigntokensdemo.PaddingFragment"
-        android:label="Padding"
-        tools:layout="@layout/fragment_padding" />
+        android:id="@+id/navigation_font_colors"
+        android:name="com.dbanksdesign.styledictionarydarkmode.FontColorsFragment"
+        android:label="Font colors"
+        tools:layout="@layout/fragment_font_colors" />
 
     <fragment
-        android:id="@+id/navigation_typography"
-        android:name="com.dbanksdesign.claritydesigntokensdemo.TypographyFragment"
-        android:label="Typography"
-        tools:layout="@layout/fragment_typography" />
+        android:id="@+id/navigation_border_colors"
+        android:name="com.dbanksdesign.styledictionarydarkmode.BorderColorsFragment"
+        android:label="Border colors"
+        tools:layout="@layout/fragment_border_colors" />
+
+    <fragment
+        android:id="@+id/navigation_graphics"
+        android:name="com.dbanksdesign.styledictionarydarkmode.GraphicsFragment"
+        android:label="@string/title_graphics"
+        tools:layout="@layout/fragment_graphics" />
 </navigation>

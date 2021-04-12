@@ -51,7 +51,7 @@ struct ContentView: View {
                 Text("Home")
             }
             TokensView().tabItem {
-                Image(systemName: "paintbrush.pointed")
+                Image(systemName: "slider.horizontal.3")
                 Text("Tokens")
             }
             ComponentsListView().tabItem {

@@ -14,147 +14,181 @@ fs.removeSync(androidPath);
 console.log(`cleaning ${webPath}...`);
 fs.removeSync(webPath);
 
+// Adding custom actions, transforms, and formats
+const styleDictionary = StyleDictionary.extend({
+  // custom actions
+  action: {
+    generateColorsets: require('./actions/ios/colorsets'),
+    generateGraphics: require('./actions/generateGraphics'),
+  },
+  // custom transforms
+  transform: {
+    'attribute/cti': require('./transforms/attributeCTI'),
+    'colorRGB': require('./transforms/colorRGB'),
+    'size/remToFloat': {
+      type: 'value',
+      matcher: (token) => token.attributes.category === 'size',
+      transformer: (token) => {
+        return token.value * 16
+      }
+    }
+  },
+  // custom formats
+  format: {
+    swiftColor: require('./formats/swiftColor'),
+    swiftImage: require('./formats/swiftImage'),
+  },
+});
+
 const modes = [`light`,`dark`];
 
-modes.forEach(mode => {
-  console.log(`Building ${mode} mode...`);
-  
-  let androidColor = {
-    destination: `values/colors.xml`,
-    format: `android/resources`,
-    filter: (token) => token.attributes.category === `color`,
-    options: {
-      // this is important!
-      // this will keep token references intact so that we don't need
-      // to generate *all* color resources for dark mode, only
-      // the specific ones that change
-      outputReferences: true
+const assets = {
+  transforms: [`attribute/cti`,`color/hex`,`size/remToFloat`,`name/ti/camel`],
+  buildPath: webPath,
+  iosPath,
+  androidPath,
+  actions: [`generateGraphics`]
+};
+
+const iosColors = {
+  buildPath: iosPath,
+  transforms: [`attribute/cti`,`colorRGB`,`name/ti/camel`],
+  actions: [`generateColorsets`]
+};
+
+console.log(`☀️ Building light mode...`);
+styleDictionary.extend({
+  // Using the include array so that theme token overrides don't show
+  // warnings in the console. 
+  include: [
+    `tokens/**/*!(.${modes.join(`|`)}).+(js|json5)`
+  ],
+  source: [
+    // I know there are no "light" tokens, because default is light mode
+    // if you did want to have light mode tokens that aren't the default,
+    // uncomment the line below 👇
+    // `tokens/**/*.light.+(js|json5)`
+  ],
+
+  platforms: {
+    css: {
+      transformGroup: `css`,
+      buildPath: webPath,
+      files: [{
+        destination: `variables-light.css`,
+        format: `css/variables`,
+        options: {
+          selector: `body`,
+          outputReferences: true
+        }
+      }]
     },
-  };
-  
-  let cssVarFile = {
-    destination: `variables-${mode}.css`,
-    format: `css/variables`,
-    
-    options: {
-      selector: `body`,
-      outputReferences: true
-    }
-  }
-  
-  if (mode === `dark`) {
-    androidColor = {
-      destination: `values-night/colors.xml`,
-      format: `android/resources`,
-      filter: (token) => token.filePath.indexOf('dark') > -1
-    };
-    cssVarFile = {
-      destination: `variables-${mode}.css`,
-      format: `css/variables`,
-      filter: (token) => token.filePath.indexOf(mode) > -1,
-      options: {
-        selector: `.dark`,
-        outputReferences: true
-      }
-    };
-  }
-  
-  StyleDictionary.extend({
-    // Using the include array so that theme token overrides don't show
-    // warnings in the console. 
-    include: [
-      `tokens/**/*!(.${modes.join(`|`)}).+(js|json5)`
-    ],
-    source: [
-      // I know there are no "light" tokens, because default is light mode
-      `tokens/**/*.${mode}.+(js|json5)`
-    ],
-    // custom actions
-    action: {
-      generateColorsets: require('./actions/ios/colorsets'),
-      generateGraphics: require('./actions/generateGraphics'),
-    },
-    // custom transforms
-    transform: {
-      'attribute/cti': require('./transforms/attributeCTI'),
-      'colorRGB': require('./transforms/colorRGB')
-    },
-    // custom formats
-    format: {
-      swiftColor: require('./formats/swiftColor'),
-      swiftImage: require('./formats/swiftImage'),
-      css: function(opts) {
-        return `@media (prefers-color-scheme: dark) {\n` +
-          StyleDictionary.format['css/variables'](opts) +
-          `\n}\n`;
-      }
+
+    iOS: {
+      buildPath: iosPath,
+      transforms: [`attribute/cti`,`name/ti/camel`,`size/swift/remToCGFloat`],
+      files: [{
+        destination: `Color.swift`,
+        format: `swiftColor`,
+        filter: (token) => token.attributes.category === `color`,
+        options: {
+          outputReferences: true
+        }
+      },{
+        destination: `Size.swift`,
+        filter: (token) => token.attributes.category === `size`,
+        className: `Size`,
+        format: `ios-swift/class.swift`
+      },{
+        destination: `Image.swift`,
+        filter: (token) => token.attributes.category === `image`,
+        format: `swiftImage`
+      }]
     },
     
-    platforms: {
-      css: {
-        transformGroup: `css`,
-        buildPath: webPath,
-        files: [
-          cssVarFile
-        ]
-      },
-      // TODO: we don't need to generate these multiple times
-      iOS: {
-        buildPath: iosPath,
-        transforms: [`attribute/cti`,`name/ti/camel`,`size/swift/remToCGFloat`],
-        files: [{
-          destination: `Color.swift`,
-          format: `swiftColor`,
-          filter: (token) => token.attributes.category === `color`,
-          options: {
-            outputReferences: true
-          }
-        },{
-          destination: `Size.swift`,
-          filter: (token) => token.attributes.category === `size`,
-          className: `Size`,
-          format: `ios-swift/class.swift`
-        },{
-          destination: `Image.swift`,
-          filter: (token) => token.attributes.category === `image`,
-          format: `swiftImage`
-        }]
-      },
-      
-      iOSColors: {
-        buildPath: iosPath,
-        mode,
-        transforms: [`attribute/cti`,`colorRGB`,`name/ti/camel`],
-        actions: [`generateColorsets`]
-      },
-      
-      asset: {
-        mode,
-        transforms: [`attribute/cti`,`color/hex`,`name/ti/camel`],
-        buildPath: webPath,
-        iosPath,
-        androidPath,
-        actions: [`generateGraphics`]
-      },
-      
-      android: {
-        transformGroup: `android`,
-        buildPath: androidPath,
-        files: [
-          androidColor,
-          {
-            destination: `values/font_dimens.xml`,
-            filter: (token) => token.attributes.category === `size` &&
-              token.attributes.type === `font`,
-            format: `android/resources`
-          },{
-            destination: `values/dimens.xml`,
-            filter: (token) => token.attributes.size === `size` &&
-              token.attributes.type !== `font`,
-            format: `android/resources`
-          }
-        ]
-      },
+    iosColors: Object.assign(iosColors, {
+      mode: `light`
+    }),
+    
+    asset: Object.assign(assets, {
+      mode: `light`
+    }),
+    
+    android: {
+      transformGroup: `android`,
+      buildPath: androidPath,
+      files: [{
+        destination: `values/colors.xml`,
+        format: `android/resources`,
+        filter: (token) => token.attributes.category === `color`,
+        options: {
+          // this is important!
+          // this will keep token references intact so that we don't need
+          // to generate *all* color resources for dark mode, only
+          // the specific ones that change
+          outputReferences: true
+        },
+      },{
+        destination: `values/font_dimens.xml`,
+        filter: (token) => token.attributes.category === `size` &&
+          token.attributes.type === `font`,
+        format: `android/resources`
+      },{
+        destination: `values/dimens.xml`,
+        filter: (token) => token.attributes.category === `size` &&
+          token.attributes.type !== `font`,
+        format: `android/resources`
+      }]
     }
-  }).buildAllPlatforms();
-});
+  }
+}).buildAllPlatforms();
+
+
+// Dark Mode
+// we will only build the files we need to, we don't need to rebuild all the files
+console.log(`🌙 Building dark mode...`);
+styleDictionary.extend({
+  // Using the include array so that theme token overrides don't show
+  // warnings in the console. 
+  include: [
+    `tokens/**/*!(.${modes.join(`|`)}).+(js|json5)`
+  ],
+  source: [
+    `tokens/**/*.dark.+(js|json5)`
+  ],
+  platforms: {
+    css: {
+      transformGroup: `css`,
+      buildPath: webPath,
+      files: [{
+        destination: `variables-dark.css`,
+        format: `css/variables`,
+        // only putting in the tokens from files with '.dark' in the filepath
+        filter: (token) => token.filePath.indexOf(`.dark`) > -1,
+        options: {
+          selector: `.dark`,
+          outputReferences: true
+        }
+      }]
+    },
+    
+    assets: Object.assign(assets, {
+      mode: `dark`
+    }),
+    
+    iosColors: Object.assign(iosColors, {
+      mode: `dark`
+    }),
+    
+    android: {
+      transformGroup: `android`,
+      buildPath: androidPath,
+      files: [{
+        destination: `values-night/colors.xml`,
+        format: `android/resources`,
+        // only putting in the tokens from files with '.dark' in the filepath
+        filter: (token) => token.filePath.indexOf(`.dark`) > -1
+      }]
+    }
+  }
+}).buildAllPlatforms();

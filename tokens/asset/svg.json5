@@ -4,7 +4,6 @@
     // no need to have different SVG assets!
     "logo": { "value": "assets/svg/logo.svg" },
     "empty": { "value": "assets/svg/empty.svg" },
-    "opened": { "value": "assets/svg/opened.svg" },
-    "addFiles": { "value": "assets/svg/add-files.svg" },
+    "files": { "value": "assets/svg/files.svg" },
   },
 }

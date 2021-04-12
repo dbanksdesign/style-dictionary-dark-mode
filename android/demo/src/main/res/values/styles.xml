@@ -1,21 +1,46 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/color_core_aqua_1000</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorSecondary">@color/color_core_pink_700</item>
+        <item name="colorPrimary">@color/color_brand_primary_600</item>
+        <item name="colorPrimaryDark">@color/color_brand_primary_800</item>
+        <item name="colorAccent">@color/color_brand_secondary_600</item>
+        <item name="colorSecondary">@color/color_brand_secondary_600</item>
         <item name="colorOnPrimary">@color/color_font_inverse</item>
         <item name="colorOnSurface">@color/color_font_primary</item>
         <item name="colorSurface">@color/color_background_primary</item>
+        <item name="colorPrimarySurface">@color/color_brand_primary_600</item>
         <item name="android:colorBackground">@color/color_background_primary</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyApp.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyApp.MediumComponent</item>
     </style>
 
+    <style name="ShapeAppearance.MyApp.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/size_border_radius_medium</item>
+    </style>
 
-    <style name="DTButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="ShapeAppearance.MyApp.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/size_border_radius_large</item>
+    </style>
+
+    <style name="DTOutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="backgroundTint">@color/component_button_outline_background_color</item>
         <item name="strokeColor">@color/component_button_outline_border_color</item>
+        <item name="strokeWidth">@dimen/component_button_outline_border_width</item>
+        <item name="android:padding">@dimen/component_button_padding</item>
+        <item name="android:textSize">@dimen/component_button_font_size</item>
+        <item name="android:textColor">@color/component_button_outline_color</item>
+        <item name="cornerRadius">@dimen/component_button_border_radius</item>
+    </style>
+
+    <style name="DTPrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/component_button_primary_background_color</item>
+        <item name="android:textColor">@color/component_button_primary_color</item>
+        <item name="android:padding">@dimen/component_button_padding</item>
+        <item name="android:textSize">@dimen/component_button_font_size</item>
+        <item name="cornerRadius">@dimen/component_button_border_radius</item>
     </style>
 
     <style name="DTBadge" parent="Widget.MaterialComponents.Chip.Action">

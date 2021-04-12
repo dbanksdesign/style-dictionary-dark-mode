@@ -45,7 +45,9 @@ function generateImageset({ svg, name, iosPath, mode }) {
   // Here we are using the sharp library for image processing that will take
   // the SVG content
   // https://sharp.pixelplumbing.com/api-constructor
-  sharp(Buffer.from(svg, `utf-8`))
+  sharp(Buffer.from(svg, `utf-8`), {
+      density: 300,
+    })
     .toFile(`${outputPath}/${filename}`, (err) => {
       if (!err) {
         console.log(`✔︎  ${outputPath}/${filename}`);

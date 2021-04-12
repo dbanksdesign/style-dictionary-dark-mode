@@ -21,12 +21,7 @@ struct GraphicsView: View {
                         .scaledToFit()
                         .frame(minWidth: 0, maxWidth: .infinity)
                         .padding(.bottom, Size.paddingMedium)
-                    Image.opened
-                        .resizable()
-                        .scaledToFit()
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding(.bottom, Size.paddingMedium)
-                    Image.addFiles
+                    Image.files
                         .resizable()
                         .scaledToFit()
                         .frame(minWidth: 0, maxWidth: .infinity)

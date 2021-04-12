@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "com.dbanksdesign.claritydesigntokensdemo"
+        applicationId "com.dbanksdesign.styledictionarydarkmode"
         minSdkVersion 29
         targetSdkVersion 29
         versionCode 1

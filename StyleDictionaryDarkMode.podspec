@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint ClarityDesignTokens.podspec' to ensure this is a
+#  Be sure to run `pod spec lint StyleDictionaryDarkMode.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
   Dark Mode Design Tokens!
                    DESC
 
-  spec.homepage     = "http://EXAMPLE/ClarityDesignTokens"
+  spec.homepage     = "http://EXAMPLE/StyleDictionaryDarkMode"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
