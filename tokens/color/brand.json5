@@ -2,22 +2,23 @@
   "color": {
     "brand": {
       "primary": {
-        // This is a cool hack to get the token name 'colorBrandPrimary' in
-        // addition to 'colorBrandPrimary200', etc. 
-        "_": { "value": "{color.brand.primary.600.value}" },
-        "base": { "value": "{color.brand.primary.400.value}" },
-        "200": { "value": "{color.core.teal.200.value}" },
-        "400": { "value": "{color.core.teal.400.value}" },
-        "600": { "value": "{color.core.teal.600.value}" },
-        "800": { "value": "{color.core.teal.800.value}" }
+        "base": { "value": "{color.brand.primary.1.value}" },
+        "dark": { "value": "{color.brand.primary.0.value}" },
+        "0": { "value": "{color.core.teal.900.value}" },
+        "1": { "value": "{color.core.teal.700.value}" },
+        "2": { "value": "{color.core.teal.500.value}" },
+        "3": { "value": "{color.core.teal.300.value}" },
+        "4": { "value": "{color.core.teal.100.value}" },
       },
       
       "secondary": {
-        "base": { "value": "{color.brand.secondary.400.value}" },
-        "200": { "value": "{color.core.blue.200.value}" },
-        "400": { "value": "{color.core.blue.400.value}" },
-        "600": { "value": "{color.core.blue.600.value}" },
-        "800": { "value": "{color.core.blue.800.value}" }
+        "base": { "value": "{color.brand.secondary.1.value}" },
+        "dark": { "value": "{color.brand.secondary.0.value}" },
+        "0": { "value": "{color.core.blue.900.value}" },
+        "1": { "value": "{color.core.blue.700.value}" },
+        "2": { "value": "{color.core.blue.500.value}" },
+        "3": { "value": "{color.core.blue.300.value}" },
+        "4": { "value": "{color.core.blue.100.value}" },
       }
     }
   }

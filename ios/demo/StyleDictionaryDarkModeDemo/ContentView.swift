@@ -62,7 +62,7 @@ struct ContentView: View {
                 Image(systemName: "wand.and.stars")
                 Text("Graphics")
             }
-        }.accentColor(Color.brandPrimary)
+        }.accentColor(Color.fontInteractive)
         .background(Color.backgroundPrimary)
     }
 }

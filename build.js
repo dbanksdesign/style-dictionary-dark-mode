@@ -44,7 +44,7 @@ const modes = [`light`,`dark`];
 
 const assets = {
   transforms: [`attribute/cti`,`color/hex`,`size/remToFloat`,`name/ti/camel`],
-  buildPath: webPath,
+  buildPath: `${webPath}/images/`,
   iosPath,
   androidPath,
   actions: [`generateGraphics`]
@@ -78,9 +78,17 @@ styleDictionary.extend({
         destination: `variables-light.css`,
         format: `css/variables`,
         options: {
-          selector: `body`,
           outputReferences: true
         }
+      }]
+    },
+    
+    js: {
+      transformGroup: `web`,
+      buildPath: webPath,
+      files: [{
+        destination: `tokens.json`,
+        format: `json/flat`
       }]
     },
 
@@ -166,7 +174,6 @@ styleDictionary.extend({
         // only putting in the tokens from files with '.dark' in the filepath
         filter: (token) => token.filePath.indexOf(`.dark`) > -1,
         options: {
-          selector: `.dark`,
           outputReferences: true
         }
       }]

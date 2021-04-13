@@ -3,20 +3,21 @@
     "badge": {
       "font-size": { "value": "{size.font.small.value}" },
       "border-radius": { "value": "{size.border.radius.large.value}" },
-      "color": { value: "{color.font.info.value}" },
-      "background-color": { value: "{color.background.info.value}" },
+      "color": { "value": "{color.font.info.value}" },
+      "background-color": { "value": "{color.background.info.value}" },
+      "padding": { "value": "{size.padding.small.value}" },
       
       "variant": {
         "danger": {
-          "color": { value: "{color.font.danger.value}" },
+          "color": { "value": "{color.font.danger.value}" },
           "background-color": { "value": "{color.background.danger.value}" }
         },
         "warning": {
-          "color": { value: "{color.font.warning.value}" },
+          "color": { "value": "{color.font.warning.value}" },
           "background-color": { "value": "{color.background.warning.value}" }
         },
         "success": {
-          "color": { value: "{color.font.success.value}" },
+          "color": { "value": "{color.font.success.value}" },
           "background-color": { "value": "{color.background.success.value}" }
         }
       }

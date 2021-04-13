@@ -6,10 +6,17 @@
       secondary: { value: "{color.core.neutral.100.value}" },
       tertiary: { value: "{color.core.neutral.200.value}" },
       
-      danger: { value: "{color.core.red.0.value}" },
-      warning: { value: "{color.core.yellow.0.value}" },
-      success: { value: "{color.core.green.0.value}" },
-      info: { value: "{color.core.blue.0.value}" },
+      // because these tokens already reference ones with dark values
+      // we don't need to define dark values for them in border.dark.json5
+      "interactive": { "value": "{color.brand.primary.base.value}" },
+      "hover": { "value": "{color.brand.primary.dark.value}" },
+      "active": { "value": "{color.brand.secondary.base.value}" },
+      "disabled": { "value": "{color.background.tertiary.value}" },
+      
+      danger: { value: "{color.core.red.100.value}" },
+      warning: { value: "{color.core.yellow.100.value}" },
+      success: { value: "{color.core.green.100.value}" },
+      info: { value: "{color.core.blue.100.value}" },
       disabled: { value: "{color.background.tertiary.value}" }
     }
   }

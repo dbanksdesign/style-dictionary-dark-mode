@@ -2,21 +2,23 @@
   "color": {
     "brand": {
       "primary": {
-        // color.brand.primary.base in brand.json5 references a color with 
-        // a dark value override, no need to re-define it here. 
-        "200": { "value": "{color.core.pink.800.value}" },
-        "400": { "value": "{color.core.pink.600.value}" },
-        "600": { "value": "{color.core.pink.400.value}" },
-        "800": { "value": "{color.core.pink.200.value}" }
+        "base": { "value": "{color.brand.primary.2.value}" },
+        "dark": { "value": "{color.brand.primary.4.value}" },
+        "0": { "value": "{color.core.pink.100.value}" },
+        "1": { "value": "{color.core.pink.300.value}" },
+        "2": { "value": "{color.core.pink.500.value}" },
+        "3": { "value": "{color.core.pink.700.value}" },
+        "4": { "value": "{color.core.pink.900.value}" },
       },
       
       "secondary": {
-        // color.brand.secondary.base in brand.json5 references a color with 
-        // a dark value override, no need to re-define it here. 
-        "200": { "value": "{color.core.purple.800.value}" },
-        "400": { "value": "{color.core.purple.600.value}" },
-        "600": { "value": "{color.core.purple.400.value}" },
-        "800": { "value": "{color.core.purple.200.value}" }
+        "base": { "value": "{color.brand.secondary.2.value}" },
+        "dark": { "value": "{color.brand.secondary.4.value}" },
+        "0": { "value": "{color.core.purple.100.value}" },
+        "1": { "value": "{color.core.purple.300.value}" },
+        "2": { "value": "{color.core.purple.500.value}" },
+        "3": { "value": "{color.core.purple.700.value}" },
+        "4": { "value": "{color.core.purple.900.value}" },
       }
     }
   }

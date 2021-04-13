@@ -10,7 +10,7 @@
           // Just to show how you would change a component token in dark mode
           // let's change the primary button's background color to our
           // secondary brand color
-          "value": "{color.brand.secondary.600.value}"
+          "value": "{color.brand.secondary.base.value}"
         }
       }
     }

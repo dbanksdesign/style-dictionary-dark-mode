@@ -7,9 +7,9 @@
       
       // because these tokens already reference ones with dark values
       // we don't need to define dark values for them in border.dark.json5
-      "interactive": { "value": "{color.brand.primary.600.value}" },
-      "hover": { "value": "{color.brand.primary.800.value}" },
-      "active": { "value": "{color.brand.secondary.600.value}" },
+      "interactive": { "value": "{color.brand.primary.base.value}" },
+      "hover": { "value": "{color.brand.primary.dark.value}" },
+      "active": { "value": "{color.brand.secondary.base.value}" },
       "disabled": { "value": "{color.border.tertiary.value}" },
       
       "danger": { "value": "{color.core.red.600.value}" },

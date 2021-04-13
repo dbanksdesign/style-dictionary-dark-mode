@@ -2,14 +2,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/color_brand_primary_600</item>
-        <item name="colorPrimaryDark">@color/color_brand_primary_800</item>
-        <item name="colorAccent">@color/color_brand_secondary_600</item>
-        <item name="colorSecondary">@color/color_brand_secondary_600</item>
+        <item name="colorPrimary">@color/color_brand_primary_base</item>
+        <item name="colorPrimaryDark">@color/color_brand_primary_dark</item>
+        <item name="colorAccent">@color/color_brand_secondary_base</item>
+        <item name="colorSecondary">@color/color_brand_secondary_base</item>
         <item name="colorOnPrimary">@color/color_font_inverse</item>
         <item name="colorOnSurface">@color/color_font_primary</item>
         <item name="colorSurface">@color/color_background_primary</item>
-        <item name="colorPrimarySurface">@color/color_brand_primary_600</item>
+        <item name="colorPrimarySurface">@color/color_brand_primary_base</item>
         <item name="android:colorBackground">@color/color_background_primary</item>
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyApp.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyApp.MediumComponent</item>
