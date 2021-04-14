@@ -19,7 +19,6 @@ struct FontColorRow: View {
             Text("Aa")
                 .font(.title)
                 .foregroundColor(color)
-                .padding(Size.paddingMedium)
             VStack(alignment: .leading) {
                 Text(label)
                     .foregroundColor(color)

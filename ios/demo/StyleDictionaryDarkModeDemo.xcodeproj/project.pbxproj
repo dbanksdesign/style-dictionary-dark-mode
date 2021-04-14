@@ -18,6 +18,7 @@
 		2637BB6725F9DA3A000051B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2637BB6625F9DA3A000051B4 /* Assets.xcassets */; };
 		2637BB6A25F9DA3A000051B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2637BB6925F9DA3A000051B4 /* Preview Assets.xcassets */; };
 		2637BB6D25F9DA3A000051B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2637BB6B25F9DA3A000051B4 /* LaunchScreen.storyboard */; };
+		268EA0082627AFA9006FE1D4 /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268EA0072627AFA9006FE1D4 /* GraphicsView.swift */; };
 		26EA02F225F9E9E900538833 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EA02F125F9E9E900538833 /* HomeView.swift */; };
 		26EA02F425F9EAC200538833 /* ComponentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EA02F325F9EAC200538833 /* ComponentsListView.swift */; };
 		26EA02F625F9EB0F00538833 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EA02F525F9EB0F00538833 /* ButtonsView.swift */; };
@@ -37,6 +38,7 @@
 		2637BB6925F9DA3A000051B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2637BB6C25F9DA3A000051B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2637BB6E25F9DA3A000051B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		268EA0072627AFA9006FE1D4 /* GraphicsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsView.swift; sourceTree = "<group>"; };
 		26EA02F125F9E9E900538833 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		26EA02F325F9EAC200538833 /* ComponentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsListView.swift; sourceTree = "<group>"; };
 		26EA02F525F9EB0F00538833 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		2637BB5F25F9DA37000051B4 /* StyleDictionaryDarkModeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				268EA0072627AFA9006FE1D4 /* GraphicsView.swift */,
 				261FC6C12620C6E600799D05 /* ComponentViews */,
 				261FC6BB2620B93400799D05 /* TokenViews */,
 				2637BB6025F9DA37000051B4 /* AppDelegate.swift */,
@@ -257,6 +260,7 @@
 				26EA02F625F9EB0F00538833 /* ButtonsView.swift in Sources */,
 				2637BB6125F9DA37000051B4 /* AppDelegate.swift in Sources */,
 				26EA02F225F9E9E900538833 /* HomeView.swift in Sources */,
+				268EA0082627AFA9006FE1D4 /* GraphicsView.swift in Sources */,
 				2637BB6325F9DA37000051B4 /* SceneDelegate.swift in Sources */,
 				2637BB6525F9DA37000051B4 /* ContentView.swift in Sources */,
 				26EA02F425F9EAC200538833 /* ComponentsListView.swift in Sources */,

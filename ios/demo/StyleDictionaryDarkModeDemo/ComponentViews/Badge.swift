@@ -61,10 +61,10 @@ struct Badge: View {
 struct BadgesView: View {
     var body: some View {
         VStack(spacing: 10) {
-            Badge(text: "warning", type: .warning)
-            Badge(text: "danger", type: .danger)
-            Badge(text: "success", type: .success)
             Badge(text: "default")
+            Badge(text: "danger", type: .danger)
+            Badge(text: "warning", type: .warning)
+            Badge(text: "success", type: .success)
         }
         .navigationBarTitle("Badges")
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -78,4 +78,3 @@ struct Badge_Previews: PreviewProvider {
         BadgesView()
     }
 }
-

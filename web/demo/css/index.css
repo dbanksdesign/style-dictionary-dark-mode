@@ -1,0 +1,210 @@
+/* Global stylesheet */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, system-ui, sans-serif;
+  color: var(--color-font-primary);
+  background-color: var(--color-background-primary);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a[href] {
+  color: var(--color-font-interactive);
+}
+
+a[href]:hover {
+  color: var(--color-font-hover);
+}
+
+a[href]:active,
+a[href].active {
+  color: var(--color-font-active);
+}
+
+main {
+  padding: var(--size-padding-xl);
+  margin-left: 15rem;
+}
+
+main :first-child {
+  margin-top: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15rem;
+  border-right: var(--size-border-width-medium) solid var(--color-border-primary);
+  /* background-color: var(--color-background-secondary); */
+}
+
+header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+table {
+  margin: 1em 0;
+}
+
+table td,
+table th {
+  padding-right: 1em;
+}
+
+
+/* Nav */
+.nav {
+  padding: 0;
+  list-style: none;
+  float: left;
+  margin-left: 1em;
+}
+
+.nav-item {
+  display: block;
+  padding: var(--size-padding-medium);
+  text-decoration: none;
+}
+
+.nav-item > svg {
+  vertical-align: middle;
+  margin-right: var(--size-padding-small);
+}
+
+a[href].nav-item-active {
+  font-weight: 700;
+  color: var(--color-font-active);
+}
+
+/* Warning */
+.warning {
+  background-color: #ffc;
+  padding: 1em 0.625em; /* 16px 10px /16 */
+}
+.warning ol:only-child {
+  margin: 0;
+}
+
+/* Direct Links / Markdown Headers */
+.direct-link {
+  font-family: sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  margin-left: .1em;
+}
+a[href].direct-link,
+a[href].direct-link:visited {
+  color: transparent;
+}
+a[href].direct-link:focus,
+a[href].direct-link:focus:visited,
+:hover > a[href].direct-link,
+:hover > a[href].direct-link:visited {
+  color: #aaa;
+}
+
+html, body {
+  background-color: var(--color-background-primary);
+  color: var(--color-font-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--component-badge-padding);
+  border-radius: var(--component-badge-border-radius);
+  background-color: var(--component-badge-background-color);
+  color: var(--component-badge-color);
+}
+
+.badge.danger {
+  background-color: var(--component-badge-variant-danger-background-color);
+  color: var(--component-badge-variant-danger-color);
+}
+
+.badge.warning {
+  background-color: var(--component-badge-variant-warning-background-color);
+  color: var(--component-badge-variant-warning-color);
+}
+
+.badge.success {
+  background-color: var(--component-badge-variant-success-background-color);
+  color: var(--component-badge-variant-success-color);
+}
+
+button {
+  padding: var(--component-button-padding);
+  font-size: var(--component-button-font-size);
+  border-radius: var(--component-button-border-radius);
+  border-style: solid;
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: var(--component-button-primary-background-color);
+  color: var(--component-button-primary-color);
+  border: none;
+}
+
+button.primary:hover {
+  background-color: var(--component-button-primary-hover-background-color);
+  color: var(--component-button-primary-hover-color);
+}
+
+button.primary:active {
+  background-color: var(--component-button-primary-active-background-color);
+  color: var(--component-button-primary-active-color);
+}
+
+button.outline {
+  background-color: var(--component-button-outline-background-color);
+  color: var(--component-button-outline-color);
+  border-width: var(--component-button-outline-border-width);
+  border-color: var(--component-button-outline-border-color);
+}
+
+button.outline:hover {
+  border-color: var(--component-button-outline-hover-border-color);
+  color: var(--component-button-outline-hover-color);
+}
+
+button.outline:active {
+  border-color: var(--component-button-outline-active-border-color);
+  color: var(--component-button-outline-active-color);
+}
+
+.color-token {
+  display: flex;
+  flex-direction: row;
+  padding: var(--size-padding-medium);
+  margin-bottom: var(--size-padding-medium);
+  border-width: var(--size-border-width-medium);
+  border-style: solid;
+  border-color: transparent;
+}
+
+.color-token.border {
+
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  flex: 1;
+  padding: var(--size-padding-medium);
+}

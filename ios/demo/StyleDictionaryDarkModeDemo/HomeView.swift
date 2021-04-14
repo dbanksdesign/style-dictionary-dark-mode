@@ -14,8 +14,13 @@ struct HomeView: View {
     var body: some View {
         VStack {
             Image.logo
+                .resizable()
+                .scaledToFit()
+                .frame(minWidth: 0, maxWidth: 100)
+                .padding(.bottom, Size.paddingMedium)
             Text("Dark mode with style dictionary")
                 .foregroundColor(Color.fontPrimary)
+                .font(.system(size: Size.fontLarge))
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(Color.backgroundPrimary)

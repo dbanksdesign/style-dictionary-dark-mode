@@ -1,0 +1,16 @@
+{
+  "image": {
+    "logo": {
+      "value": "assets/svg/logo.svg",
+      "darkValue": "assets/svg/logo.dark.svg"
+    },
+    "empty": {
+      "value": "assets/svg/empty.svg",
+      "darkValue": "assets/svg/empty.dark.svg"
+    },
+    "files": {
+      "value": "assets/svg/files.svg",
+      "darkValue": "assets/svg/files.dark.svg"
+    },
+  },
+}

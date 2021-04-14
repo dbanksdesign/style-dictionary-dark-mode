@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+eleventyNavigation:
+  key: Home
+---
+
+
+<h1>Dark mode with Style Dictionary</h1>
+
+<picture>
+  <!-- Use this image if the user's OS setting is light or unset -->
+  <source srcset="images/logo.svg" media="(prefers-color-scheme: light)">
+  <!-- Use this image if the user's OS setting is dark -->
+  <source srcset="images/logo-dark.svg" media="(prefers-color-scheme: dark)">
+  <img style="width: 15rem" src="images/logo.svg" />
+</picture>

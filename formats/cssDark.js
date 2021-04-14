@@ -5,7 +5,7 @@ function cssDark({ dictionary, options={} }) {
         let {value} = token;
         let originalValue = token.original.value;
         if (dictionary.usesReference(originalValue)) {
-          const reference = dictionary.getReference(originalValue);
+          const reference = dictionary.getReferences(originalValue)[0];
           value = `var(--${reference.name})`
         }
         return `  --${token.name}: ${value};`
@@ -22,7 +22,7 @@ function cssDark({ dictionary, options={} }) {
         let value = token.darkValue;
         let originalValue = token.original.darkValue;
         if (dictionary.usesReference(originalValue)) {
-          const reference = dictionary.getReference(originalValue);
+          const reference = dictionary.getReferences(originalValue)[0];
           value = `var(--${reference.name})`
         }
         return `  --${token.name}: ${value};`

@@ -20,9 +20,9 @@
       
       // these tokens reference tokens with darkValues,
       // no need to define darkValues for them
-      "interactive": { "value": "{color.brand.primary.600.value}" },
-      "hover": { "value": "{color.brand.primary.800.value}" },
-      "active": { "value": "{color.brand.secondary.600.value}" },
+      "interactive": { "value": "{color.brand.primary.1.value}" },
+      "hover": { "value": "{color.brand.primary.0.value}" },
+      "active": { "value": "{color.brand.secondary.1.value}" },
       "disabled": { "value": "{color.font.tertiary.value}" },
       
       "danger": {

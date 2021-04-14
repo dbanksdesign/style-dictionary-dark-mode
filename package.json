@@ -2,7 +2,11 @@
   "name": "style-dictionary-dark-mode",
   "version": "1.0.0",
   "description": "",
-  "main": "build.js",
+  "main": "dist/tokens.js",
+  "files": [
+    "web/dist",
+    "build.js"
+  ],
   "scripts": {
     "build": "node build.js",
     "start": "npm run build && chokidar \"tokens/**/*\" -c \"npm run build\""

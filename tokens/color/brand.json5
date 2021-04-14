@@ -2,48 +2,65 @@
   "color": {
     "brand": {
       "primary": {
-        // This is a cool hack to get the token name 'colorBrandPrimary' in
-        // addition to 'colorBrandPrimary200', etc. 
-        "_": {
-          "value": "{color.brand.primary.600.value}",
-          "darkValue": "{color.brand.primary.600.darkValue}"
+        "base": {
+          "value": "{color.brand.primary.1.value}",
+          "darkValue": "{color.brand.primary.2.darkValue}"
         },
-        
-        "200": {
-          "value": "{color.core.purple.200.value}",
-          "darkValue": "{color.core.purple.800.value}"
+        "dark": {
+          "value": "{color.brand.primary.0.value}",
+          "darkValue": "{color.brand.primary.4.darkValue}"
         },
-        "400": {
-          "value": "{color.core.purple.400.value}",
-          "darkValue": "{color.core.purple.600.value}"
+        "0": {
+          "value": "{color.core.teal.900.value}",
+          "darkValue": "{color.core.pink.100.value}"
         },
-        "600": {
-          "value": "{color.core.purple.600.value}",
-          "darkValue": "{color.core.purple.400.value}"
+        "1": {
+          "value": "{color.core.teal.700.value}",
+          "darkValue": "{color.core.pink.300.value}"
         },
-        "800": {
-          "value": "{color.core.purple.800.value}",
-          "darkValue": "{color.core.purple.200.value}"
-        }
+        "2": {
+          "value": "{color.core.teal.500.value}",
+          "darkValue": "{color.core.pink.500.value}"
+        },
+        "3": {
+          "value": "{color.core.teal.300.value}",
+          "darkValue": "{color.core.pink.700.value}"
+        },
+        "4": {
+          "value": "{color.core.teal.100.value}",
+          "darkValue": "{color.core.pink.900.value}"
+        },
       },
       
       "secondary": {
-        "200": {
-          "value": "{color.core.pink.200.value}",
-          "darkValue": "{color.core.pink.800.value}"
+        "base": {
+          "value": "{color.brand.secondary.1.value}",
+          "darkValue": "{color.brand.secondary.2.darkValue}"
         },
-        "400": {
-          "value": "{color.core.pink.400.value}",
-          "darkValue": "{color.core.pink.600.value}"
+        "dark": {
+          "value": "{color.brand.secondary.0.value}",
+          "darkValue": "{color.brand.secondary.4.darkValue}"
         },
-        "600": {
-          "value": "{color.core.pink.600.value}",
-          "darkValue": "{color.core.pink.400.value}"
+        "0": {
+          "value": "{color.core.blue.900.value}",
+          "darkValue": "{color.core.purple.100.value}"
         },
-        "800": {
-          "value": "{color.core.pink.800.value}",
-          "darkValue": "{color.core.pink.200.value}"
-        }
+        "1": {
+          "value": "{color.core.blue.700.value}",
+          "darkValue": "{color.core.purple.300.value}"
+        },
+        "2": {
+          "value": "{color.core.blue.500.value}",
+          "darkValue": "{color.core.purple.500.value}"
+        },
+        "3": {
+          "value": "{color.core.blue.300.value}",
+          "darkValue": "{color.core.purple.700.value}"
+        },
+        "4": {
+          "value": "{color.core.blue.100.value}",
+          "darkValue": "{color.core.purple.900.value}"
+        },
       }
     }
   }

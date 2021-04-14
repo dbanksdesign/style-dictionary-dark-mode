@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".TokensFragment">
 
-    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <com.google.android.material.card.MaterialCardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/colors_card_view"
         android:layout_gravity="center"
         android:layout_width="match_parent"
@@ -15,19 +15,18 @@
         android:layout_marginLeft="@dimen/size_padding_small"
         android:layout_marginRight="@dimen/size_padding_small"
         card_view:cardCornerRadius="0dp"
-        card_view:cardBackgroundColor="@color/color_background_primary"
         card_view:cardElevation="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_margin="@dimen/size_padding_medium"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:text="Colors"/>
-    </androidx.cardview.widget.CardView>
+            android:text="Background Colors"/>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/padding_card_view"
+    <com.google.android.material.card.MaterialCardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/border_colors_card_view"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,19 +34,18 @@
         android:layout_marginLeft="@dimen/size_padding_small"
         android:layout_marginRight="@dimen/size_padding_small"
         card_view:cardCornerRadius="0dp"
-        card_view:cardBackgroundColor="@color/color_background_primary"
         card_view:cardElevation="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_margin="@dimen/size_padding_medium"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:text="Padding"/>
-    </androidx.cardview.widget.CardView>
+            android:text="Border Colors"/>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/typography_card_view"
+    <com.google.android.material.card.MaterialCardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/font_colors_card_view"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,15 +53,14 @@
         android:layout_marginLeft="@dimen/size_padding_small"
         android:layout_marginRight="@dimen/size_padding_small"
         card_view:cardCornerRadius="0dp"
-        card_view:cardBackgroundColor="@color/color_background_primary"
         card_view:cardElevation="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_margin="@dimen/size_padding_medium"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:text="Typography"/>
-    </androidx.cardview.widget.CardView>
+            android:text="Font Colors"/>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

@@ -51,14 +51,18 @@ struct ContentView: View {
                 Text("Home")
             }
             TokensView().tabItem {
-                Image(systemName: "paintbrush.pointed")
+                Image(systemName: "slider.horizontal.3")
                 Text("Tokens")
             }
             ComponentsListView().tabItem {
-                Image(systemName: "wallet.pass")
+                Image(systemName: "shippingbox")
                 Text("Components")
             }
-        }.accentColor(Color.brandPrimary)
+            GraphicsView().tabItem {
+                Image(systemName: "wand.and.stars")
+                Text("Graphics")
+            }
+        }.accentColor(Color.fontInteractive)
         .background(Color.backgroundPrimary)
     }
 }

@@ -2,7 +2,7 @@ const StyleDictionary = require('style-dictionary');
 const fs = require('fs-extra');
 
 const iosPath = `ios/dist/`;
-const androidPath = `android/designtokens/src/main/res/`;
+const androidPath = `android/styledictionary/src/main/res/`;
 const webPath = `web/dist/`;
 
 // before this runs we should clean the directories we are generating files in
@@ -21,7 +21,14 @@ StyleDictionary.extend({
   // custom transforms
   transform: {
     'attribute/cti': require('./transforms/attributeCTI'),
-    'colorRGB': require('./transforms/colorRGB')
+    'colorRGB': require('./transforms/colorRGB'),
+    'size/remToFloat': {
+      type: 'value',
+      matcher: (token) => token.attributes.category === 'size',
+      transformer: (token) => {
+        return token.value * 16
+      }
+    }
   },
   // custom actions
   action: {
@@ -33,7 +40,7 @@ StyleDictionary.extend({
     androidDarkResources: require('./formats/androidDarkResources'),
     swiftImage: require('./formats/swiftImage'),
     swiftColor: require('./formats/swiftColor'),
-    cssDark: require('./formats/cssDark')
+    cssDark: require('./formats/cssDark'),
   },
   
   platforms: {
@@ -43,10 +50,18 @@ StyleDictionary.extend({
       files: [{
         destination: `variables.css`,
         format: `cssDark`,
-        filter: (token) => token.attributes.category !== 'image',
         options: {
           outputReferences: true
         }
+      }]
+    },
+    
+    js: {
+      transformGroup: `web`,
+      buildPath: webPath,
+      files: [{
+        destination: `tokens.json`,
+        format: `json/flat`
       }]
     },
     
@@ -79,8 +94,8 @@ StyleDictionary.extend({
     },
     
     asset: {
-      transforms: [`attribute/cti`,`color/hex`,`name/ti/camel`],
-      buildPath: webPath,
+      transforms: [`attribute/cti`,`color/hex`,`size/remToFloat`,`name/ti/camel`],
+      buildPath: `${webPath}/images/`,
       iosPath,
       androidPath,
       actions: [`generateGraphics`]

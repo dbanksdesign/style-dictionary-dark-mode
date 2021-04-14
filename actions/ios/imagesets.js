@@ -3,7 +3,6 @@ const sharp = require('sharp');
 const { contents, darkAppearance, idiom } = require('./consts');
 
 function generateImageset({ svg, svgDark, name, iosPath }) {
-  console.log(svgDark);
   const imageset = {
     ...contents,
     images: [{

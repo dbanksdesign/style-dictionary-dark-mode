@@ -32,7 +32,7 @@ extension Color {\n` +
           value = `Color.init("${token.name}", bundle: bundle)`;
         // if it is a reference -> refer to the Color extension name
         } else if (dictionary.usesReference(token.original.value)) {
-          const reference = dictionary.getReference(token.original.value);
+          const reference = dictionary.getReferences(token.original.value)[0];
           value = `Color.${reference.name}`
         // default to using the colorset
         } else {

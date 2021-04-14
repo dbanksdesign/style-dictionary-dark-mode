@@ -3,31 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".BadgeFragment">
 
-    <com.google.android.material.chip.Chip
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="default"
-        style="@style/DTBadge"/>
+        android:orientation="vertical">
 
-    <com.google.android.material.chip.Chip
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Danger"
-        style="@style/DTBadge.Danger"/>
+        <com.google.android.material.chip.Chip
+            style="@style/DTBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="default" />
 
-    <com.google.android.material.chip.Chip
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="warning"
-        style="@style/DTBadge.Warning"/>
+        <com.google.android.material.chip.Chip
+            style="@style/DTBadge.Danger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Danger" />
 
-    <com.google.android.material.chip.Chip
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="success"
-        style="@style/DTBadge.Success"/>
+        <com.google.android.material.chip.Chip
+            style="@style/DTBadge.Warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="warning" />
 
+        <com.google.android.material.chip.Chip
+            style="@style/DTBadge.Success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="success" />
+    </LinearLayout>
 </LinearLayout>

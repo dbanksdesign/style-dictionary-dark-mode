@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/color_brand_primary</color>
-    <color name="colorPrimaryDark">@color/color_brand_primary</color>
-    <color name="colorAccent">@color/color_brand_secondary</color>
-    <color name="colorSecondary">@color/color_brand_secondary</color>
-
-    <color name="color_background_primary">#ffffff</color>
-    <color name="color_background_secondary">#F8F7F8</color>
-    <color name="color_background_tertiary">#ECE9EC</color>
-    <color name="color_background_success">#DFF7EF</color>
-    <color name="color_background_error">#FFD9E6</color>
-
-    <color name="color_font_primary">#E6000626</color>
-    <color name="color_font_secondary">#CC000626</color>
-    <color name="color_font_tertiary">#99000626</color>
-    <color name="color_font_inverse">#FFFFFFFF</color>
-
-    <color name="color_border_primary">#66000626</color>
-    <color name="color_border_secondary">#33000626</color>
-    <color name="color_border_tertiary">#19000626</color>
+    <color name="colorPrimary">@color/color_brand_primary_base</color>
+    <color name="colorPrimaryDark">@color/color_brand_primary_base</color>
+    <color name="colorAccent">@color/color_brand_secondary_base</color>
+    <color name="colorSecondary">@color/color_brand_secondary_base</color>
 </resources>
