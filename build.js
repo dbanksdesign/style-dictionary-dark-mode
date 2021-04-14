@@ -115,6 +115,7 @@ styleDictionary.extend({
     },
     
     iosColors: Object.assign(iosColors, {
+      // mode lets the custom actions know which color mode they are being run on
       mode: `light`
     }),
     
@@ -193,7 +194,7 @@ styleDictionary.extend({
       files: [{
         destination: `values-night/colors.xml`,
         format: `android/resources`,
-        // only putting in the tokens from files with '.dark' in the filepath
+        // only outputting the tokens from files with '.dark' in the filepath
         filter: (token) => token.filePath.indexOf(`.dark`) > -1
       }]
     }

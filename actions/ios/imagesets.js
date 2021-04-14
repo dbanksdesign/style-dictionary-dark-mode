@@ -43,11 +43,9 @@ function generateImageset({ svg, name, iosPath, mode }) {
   imageset.images.push(image);
 
   // Here we are using the sharp library for image processing that will take
-  // the SVG content
+  // the SVG content and render it as a PNG
   // https://sharp.pixelplumbing.com/api-constructor
-  sharp(Buffer.from(svg, `utf-8`), {
-      density: 300,
-    })
+  sharp(Buffer.from(svg, `utf-8`), { density: 300 })
     .toFile(`${outputPath}/${filename}`, (err) => {
       if (!err) {
         console.log(`✔︎  ${outputPath}/${filename}`);

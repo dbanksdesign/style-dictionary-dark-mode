@@ -4,7 +4,7 @@ const { contents, darkAppearance, idiom, hcAppearance } = require('./consts');
 /**
  * This action will iterate over all the colors in the Style Dictionary
  * and for each one write a colorset with light and (optional) dark
- * mode versions. A colorset
+ * mode versions.
  */
 module.exports = {
   // This is going to run once per theme.
