@@ -5,6 +5,8 @@
       "border-radius": { "value": "{size.border.radius.large.value}" },
       "color": { value: "{color.font.info.value}" },
       "background-color": { value: "{color.background.info.value}" },
+      "padding-vertical": { "value": "{size.padding.small.value}" },
+      "padding-horizontal": { "value": "{size.padding.medium.value}" },
       
       "variant": {
         "danger": {

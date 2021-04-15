@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import StyleDictionaryDarkMode
 
 struct Badge: View {
     
@@ -51,10 +52,10 @@ struct Badge: View {
         HStack {
             Text(text).foregroundColor(type.getForegroundColor())
         }
-        .padding(.vertical, 5)
-        .padding(.horizontal, 10)
+        .padding(.vertical, Size.badgePaddingVertical)
+        .padding(.horizontal, Size.badgePaddingHorizontal)
         .background(type.getBackgroundColor())
-        .cornerRadius(20)
+        .cornerRadius(Size.badgeBorderRadius)
     }
 }
 
