@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const template = require('lodash/template');
-const generateImageset = require('./ios/imagesets');
-const androidVector = require('./androidVector');
+const iosImageset = require('./ios/imagesets');
+const androidVector = require('./android/vector');
 
 /**
  * This is a custom [Style Dictionary action](https://amzn.github.io/style-dictionary/#/actions)
@@ -43,21 +43,11 @@ module.exports = {
         console.log(`✔︎  ${outputPath}`);
         
         // This will take the SVG and convert it into Android Vector Drawable format
-        androidVector({
-          androidPath,
-          name,
-          svg,
-          mode
-        });
+        androidVector({ androidPath, name, svg, mode });
         
         // This will take the SVG and convert it to a PNG and create the metadata
         // for an iOS imageset
-        generateImageset({
-          iosPath,
-          name,
-          svg,
-          mode
-        });
+        iosImageset({iosPath, name, svg, mode });
       });
   },
   
