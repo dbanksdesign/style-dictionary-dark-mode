@@ -2,12 +2,7 @@ const fs = require('fs-extra');
 const s2v = require('svg2vectordrawable');
 
 function androidVector({ androidPath, svg, name, mode }) {
-  let outputPath;
-  if (mode === `dark`) {
-    outputPath = `${androidPath}drawable-night/${name}.xml`;
-  } else {
-    outputPath = `${androidPath}drawable/${name}.xml`;
-  }
+  const outputPath = `${androidPath}drawable/${name}.xml`;
   
   fs.ensureFileSync(outputPath);
   // s2v will generate an Android vector drawable file

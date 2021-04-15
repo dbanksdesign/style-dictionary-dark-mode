@@ -13,7 +13,7 @@ module.exports = {
   // and resolved dictionary object containing all the tokens and the platform configuration
   // of the platform that called this action. 
   do: (dictionary, config) => {
-    const { androidPath, iosPath, buildPath, mode } = config;
+    const { androidPath, iosPath, buildPath } = config;
     
     dictionary.allProperties
       .filter(token => {
@@ -37,7 +37,7 @@ module.exports = {
         const svg = src(dictionary.properties);
         
         // Make sure the directory exists and write the new SVG file
-        const outputPath = `${buildPath||''}${name}-${mode}.svg`;
+        const outputPath = `${buildPath||''}${name}.svg`;
         fs.ensureFileSync(outputPath);
         fs.writeFileSync(outputPath, svg);
         console.log(`✔︎  ${outputPath}`);
@@ -46,8 +46,7 @@ module.exports = {
         androidVector({
           androidPath,
           name,
-          svg,
-          mode
+          svg
         });
         
         // This will take the SVG and convert it to a PNG and create the metadata
@@ -55,26 +54,12 @@ module.exports = {
         generateImageset({
           iosPath,
           name,
-          svg,
-          mode
+          svg
         });
       });
   },
   
   undo: (dictionary, config) => {
-    dictionary.allProperties
-      .filter(token => {
-        return token.attributes.category === `image`
-      })
-      .forEach(token => {
-        // TODO: this logic needs to clean up and match do logic
-        const outputPath = `${config.buildPath||''}${token.name}.svg`;
-        fs.removeSync(outputPath);
-        console.log(`- ${outputPath}`);
-        
-        const androidPath = `${config.androidPath}${token.name}.xml`;
-        fs.removeSync(androidPath);
-        console.log(`- ${androidPath}`);
-      });
+    // no clean action
   }
 }
