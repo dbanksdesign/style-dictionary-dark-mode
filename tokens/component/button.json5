@@ -7,18 +7,18 @@
       "border-radius": { "value": "{size.border.radius.small.value}" },
       
       "primary": {
-        "background-color": { "value": "{color.brand.primary.1.value}" },
+        "background-color": { "value": "{color.background.interactive.value}" },
         "color": { "value": "{color.font.inverse.value}" },
         
         // hover state
         "hover": {
-          "background-color": { "value": "{color.brand.primary.2.value}" },
+          "background-color": { "value": "{color.background.hover.value}" },
           "color": { "value": "{color.font.inverse.value}" },
         },
         
         // active state
         "active": {
-          "background-color": { "value": "{color.brand.primary.3.value}" },
+          "background-color": { "value": "{color.background.active.value}" },
           "color": { "value": "{color.font.inverse.value}" },
         }
       },

@@ -2,8 +2,8 @@
   "color": {
     "font": {
       "primary": { "value": "{color.core.neutral.0.value}" },
-      "secondary": { "value": "{color.core.neutral.100.value}" },
-      "tertiary": { "value": "{color.core.neutral.200.value}" },
+      "secondary": { "value": "{color.core.neutral.200.value}" },
+      "tertiary": { "value": "{color.core.neutral.400.value}" },
       
       // interactive, hover, active, and disabled
       // already reference colors that have dark values,

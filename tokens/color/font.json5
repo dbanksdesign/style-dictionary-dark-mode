@@ -2,8 +2,8 @@
   "color": {
     "font": {
       "primary": { "value": "{color.core.neutral.1000.value}" },
-      "secondary": { "value": "{color.core.neutral.900.value}" },
-      "tertiary": { "value": "{color.core.neutral.800.value}" },
+      "secondary": { "value": "{color.core.neutral.800.value}" },
+      "tertiary": { "value": "{color.core.neutral.600.value}" },
 
       
       "interactive": { "value": "{color.brand.primary.1.value}" },
