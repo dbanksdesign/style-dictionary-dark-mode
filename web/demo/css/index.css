@@ -45,7 +45,6 @@ header {
   bottom: 0;
   width: 15rem;
   border-right: var(--size-border-width-medium) solid var(--color-border-primary);
-  /* background-color: var(--color-background-secondary); */
 }
 
 header:after {
@@ -123,7 +122,9 @@ html, body {
 
 .badge {
   display: inline-block;
-  padding: var(--component-badge-padding);
+  padding:
+    var(--component-badge-padding-vertical)
+    var(--component-badge-padding-horizontal);
   border-radius: var(--component-badge-border-radius);
   background-color: var(--component-badge-background-color);
   color: var(--component-badge-color);

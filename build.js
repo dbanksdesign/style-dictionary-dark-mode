@@ -52,16 +52,10 @@ const iosColors = {
 
 console.log(`☀️ Building light mode...`);
 styleDictionary.extend({
-  // Using the include array so that theme token overrides don't show
-  // warnings in the console. 
-  include: [
-    `tokens/**/*!(.${modes.join(`|`)}).+(js|json5)`
-  ],
   source: [
-    // I know there are no "light" tokens, because default is light mode
-    // if you did want to have light mode tokens that aren't the default,
-    // uncomment the line below 👇
-    // `tokens/**/*.light.+(js|json5)`
+    // this is saying find any files in the tokens folder
+    // that does not have .dark or .light, but ends in .json5
+    `tokens/**/*!(.${modes.join(`|`)}).json5`
   ],
 
   platforms: {
@@ -69,7 +63,7 @@ styleDictionary.extend({
       transformGroup: `css`,
       buildPath: webPath,
       files: [{
-        destination: `variables-light.css`,
+        destination: `variables.css`,
         format: `css/variables`,
         options: {
           outputReferences: true
@@ -149,15 +143,15 @@ styleDictionary.extend({
 
 // Dark Mode
 // we will only build the files we need to, we don't need to rebuild all the files
-console.log(`🌙 Building dark mode...`);
+console.log(`\n\n🌙 Building dark mode...`);
 styleDictionary.extend({
   // Using the include array so that theme token overrides don't show
   // warnings in the console. 
   include: [
-    `tokens/**/*!(.${modes.join(`|`)}).+(js|json5)`
+    `tokens/**/*!(.${modes.join(`|`)}).json5`
   ],
   source: [
-    `tokens/**/*.dark.+(js|json5)`
+    `tokens/**/*.dark.json5`
   ],
   platforms: {
     css: {

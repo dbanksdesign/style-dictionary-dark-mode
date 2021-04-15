@@ -44,6 +44,8 @@
     </style>
 
     <style name="DTBadge" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="android:paddingHorizontal">@dimen/component_badge_padding_horizontal</item>
+        <item name="android:paddingVertical">@dimen/component_badge_padding_vertical</item>
         <item name="android:textColor">@color/component_badge_color</item>
         <item name="chipBackgroundColor">@color/component_badge_background_color</item>
     </style>
