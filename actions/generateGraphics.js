@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const template = require('lodash/template');
-const generateImageset = require('./ios/imagesets');
+const iosImageset = require('./ios/imagesets');
 const androidVector = require('./androidVector');
 
 /**
@@ -43,19 +43,11 @@ module.exports = {
         console.log(`✔︎  ${outputPath}`);
         
         // This will take the SVG and convert it into Android Vector Drawable format
-        androidVector({
-          androidPath,
-          name,
-          svg
-        });
+        androidVector({ androidPath, name, svg });
         
         // This will take the SVG and convert it to a PNG and create the metadata
         // for an iOS imageset
-        generateImageset({
-          iosPath,
-          name,
-          svg
-        });
+        iosImageset({ iosPath, name, svg });
       });
   },
   
