@@ -25,13 +25,7 @@ const styleDictionary = StyleDictionary.extend({
   transform: {
     'attribute/cti': require('./transforms/attributeCTI'),
     'colorRGB': require('./transforms/colorRGB'),
-    'size/remToFloat': {
-      type: 'value',
-      matcher: (token) => token.attributes.category === 'size',
-      transformer: (token) => {
-        return token.value * 16
-      }
-    }
+    'size/remToFloat': require('./transforms/remToFloat')
   },
   // custom formats
   format: {
