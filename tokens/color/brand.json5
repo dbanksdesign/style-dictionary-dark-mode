@@ -4,11 +4,11 @@
       "primary": {
         "base": {
           "value": "{color.brand.primary.1.value}",
-          "darkValue": "{color.brand.primary.2.darkValue}"
+          "darkValue": "{color.brand.primary.2.value}"
         },
         "dark": {
           "value": "{color.brand.primary.0.value}",
-          "darkValue": "{color.brand.primary.4.darkValue}"
+          "darkValue": "{color.brand.primary.4.value}"
         },
         "0": {
           "value": "{color.core.teal.900.value}",
@@ -35,11 +35,11 @@
       "secondary": {
         "base": {
           "value": "{color.brand.secondary.1.value}",
-          "darkValue": "{color.brand.secondary.2.darkValue}"
+          "darkValue": "{color.brand.secondary.2.value}"
         },
         "dark": {
           "value": "{color.brand.secondary.0.value}",
-          "darkValue": "{color.brand.secondary.4.darkValue}"
+          "darkValue": "{color.brand.secondary.4.value}"
         },
         "0": {
           "value": "{color.core.blue.900.value}",
