@@ -14,6 +14,33 @@ fs.removeSync(androidPath);
 console.log(`cleaning ${webPath}...`);
 fs.removeSync(webPath);
 
+/**
+ * This function will wrap a built-in format and replace `.value` with `.darkValue`
+ * if a token has a `.darkValue`.
+ * @param {String} format - the name of the built-in format
+ * @returns {Function}
+ */
+function darkFormatWrapper(format) {
+  return function(args) {
+    const dictionary = Object.assign({}, args.dictionary);
+    // Override each token's `value` with `darkValue`
+    dictionary.allProperties = dictionary.allProperties.map(token => {
+      const {darkValue} = token;
+      if (darkValue) {
+        return Object.assign({}, token, {
+          value: token.darkValue
+        });
+      } else {
+        return token;
+      }
+    });
+    
+    // Use the built-in format but with our customized dictionary object
+    // so it will output the darkValue instead of the value
+    return StyleDictionary.format[format]({ ...args, dictionary })
+  }
+}
+
 StyleDictionary.extend({
   source: [
     `tokens/**/*.+(js|json5)`
@@ -37,10 +64,10 @@ StyleDictionary.extend({
   },
   // custom formats
   format: {
-    androidDarkResources: require('./formats/androidDarkResources'),
+    androidDark: darkFormatWrapper(`android/resources`),
+    cssDark: darkFormatWrapper(`css/variables`),
     swiftImage: require('./formats/swiftImage'),
     swiftColor: require('./formats/swiftColor'),
-    cssDark: require('./formats/cssDark'),
   },
   
   platforms: {
@@ -49,10 +76,14 @@ StyleDictionary.extend({
       buildPath: webPath,
       files: [{
         destination: `variables.css`,
-        format: `cssDark`,
+        format: `css/variables`,
         options: {
           outputReferences: true
         }
+      },{
+        destination: `variables-dark.css`,
+        format: `cssDark`,
+        filter: (token) => token.darkValue && token.attributes.category === `color`
       }]
     },
     
@@ -122,7 +153,7 @@ StyleDictionary.extend({
         // these colors if the OS is set to night mode.
         destination: `values-night/colors.xml`,
         format: `androidDarkResources`,
-        filter: (token) => token.darkValue
+        filter: (token) => token.darkValue && token.attributes.category === `color`
       },{
         destination: `values/font_dimens.xml`,
         format: `android/fontDimens`

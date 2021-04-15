@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const template = require('lodash/template');
 const iosImageset = require('./ios/imagesets');
-const androidVector = require('./androidVector');
+const androidVector = require('./android/vector');
 
 module.exports = {
   // An action in Style Dictionary has `do` and `undo` functions, which take the transformed

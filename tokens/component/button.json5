@@ -12,7 +12,7 @@
           // Just to show how you would change a component token in dark mode
           // let's change the primary button's background color to our
           // secondary brand color
-          "darkValue": "{color.brand.secondary.base.value}"
+          "darkValue": "{color.brand.secondary.base.darkValue}"
         },
         "color": { "value": "{color.font.inverse.value}" },
         
