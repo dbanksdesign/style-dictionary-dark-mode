@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const s2v = require('svg2vectordrawable');
 
-function androidVector({ androidPath, svg, name, mode }) {
+function androidVector({ androidPath, svg, name }) {
   const outputPath = `${androidPath}drawable/${name}.xml`;
   
   fs.ensureFileSync(outputPath);

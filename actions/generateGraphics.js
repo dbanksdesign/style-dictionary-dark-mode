@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const template = require('lodash/template');
 const iosImageset = require('./ios/imagesets');
-const androidVector = require('./androidVector');
+const androidVector = require('./android/vector');
 
 /**
  * This is a custom [Style Dictionary action](https://amzn.github.io/style-dictionary/#/actions)
