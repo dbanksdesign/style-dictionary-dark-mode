@@ -45,7 +45,6 @@ header {
   bottom: 0;
   width: 15rem;
   border-right: var(--size-border-width-medium) solid var(--color-border-primary);
-  /* background-color: var(--color-background-secondary); */
 }
 
 header:after {
@@ -86,33 +85,6 @@ table th {
 a[href].nav-item-active {
   font-weight: 700;
   color: var(--color-font-active);
-}
-
-/* Warning */
-.warning {
-  background-color: #ffc;
-  padding: 1em 0.625em; /* 16px 10px /16 */
-}
-.warning ol:only-child {
-  margin: 0;
-}
-
-/* Direct Links / Markdown Headers */
-.direct-link {
-  font-family: sans-serif;
-  text-decoration: none;
-  font-style: normal;
-  margin-left: .1em;
-}
-a[href].direct-link,
-a[href].direct-link:visited {
-  color: transparent;
-}
-a[href].direct-link:focus,
-a[href].direct-link:focus:visited,
-:hover > a[href].direct-link,
-:hover > a[href].direct-link:visited {
-  color: #aaa;
 }
 
 html, body {
@@ -193,10 +165,6 @@ button.outline:active {
   border-width: var(--size-border-width-medium);
   border-style: solid;
   border-color: transparent;
-}
-
-.color-token.border {
-
 }
 
 .columns {
