@@ -2,20 +2,50 @@
 {
   "color": {
     "background": {
-      "primary": { "value": "{color.core.white.value}" },
-      "secondary": { "value": "{color.core.neutral.100.value}" },
-      "tertiary": { "value": "{color.core.neutral.200.value}" },
-
+      "primary": {
+        "value": "{color.core.white.value}",
+        // Note: for darkValue and other alternative values to work
+        // they *need* to be a reference to another token. This is because
+        // only the `value` of a token is transformed. If you reference
+        // another token's value it will already be transformed. 
+        "hcValue": "{color.core.white.value}",
+        "darkValue": "{color.core.neutral.1000.value}",
+        "hcdarkValue": "{color.core.black.value}"
+      },
+      "secondary": {
+        "value": "{color.core.neutral.100.value}",
+        "hcValue": "{color.core.neutral.200.value}",
+        "darkValue": "{color.core.neutral.900.value}",
+        "hcDarkValue": "{color.core.neutral.800.value}"
+      },
+      "tertiary": {
+        "value": "{color.core.neutral.200.value}",
+        "hcValue": "{color.core.neutral.400.value}",
+        "darkValue": "{color.core.neutral.800.value}",
+        "hcDarkValue": "{color.core.neutral.600.value}"
+      },
+      
       "interactive": { "value": "{color.brand.primary.base.value}" },
       "hover": { "value": "{color.brand.primary.dark.value}" },
       "active": { "value": "{color.brand.secondary.base.value}" },
       "disabled": { "value": "{color.background.tertiary.value}" },
       
-      "danger": { "value": "{color.core.red.100.value}" },
-      "warning": { "value": "{color.core.yellow.100.value}" },
-      "success": { "value": "{color.core.green.100.value}" },
-      "info": { "value": "{color.core.blue.100.value}" },
-      "disabled": { "value": "{color.background.tertiary.value}" }
+      "danger": {
+        "value": "{color.core.red.0.value}",
+        "darkValue": "{color.core.red.900.value}"
+      },
+      "warning": {
+        "value": "{color.core.yellow.0.value}",
+        "darkValue": "{color.core.yellow.900.value}"
+      },
+      "success": {
+        "value": "{color.core.green.0.value}",
+        "darkValue": "{color.core.green.900.value}"
+      },
+      "info": {
+        "value": "{color.core.blue.0.value}",
+        "darkValue": "{color.core.blue.900.value}"
+      }
     }
   }
 }

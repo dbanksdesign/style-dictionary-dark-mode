@@ -20,7 +20,7 @@ module.exports = {
         return token.attributes.category === `image`
       })
       .forEach(token => {
-        const { name, value } = token;
+        const { name, value, darkValue, hcValue, hcDarkValue } = token;
         
         // Read the file from the token's value and turn it into a 
         // [lodash template](https://lodash.com/docs/4.17.15#template)
@@ -35,6 +35,7 @@ module.exports = {
         // that can now be written to a file or passed to other functions
         // to translate it to a PNG or Android Vector Drawable
         const svg = src(dictionary.properties);
+        let svgDark, svgHc, svgHcDark;
         
         // Make sure the directory exists and write the new SVG file
         const outputPath = `${buildPath||''}${name}.svg`;
@@ -42,12 +43,42 @@ module.exports = {
         fs.writeFileSync(outputPath, svg);
         console.log(`✔︎  ${outputPath}`);
         
+        if (darkValue) {
+          const src = template( fs.readFileSync(darkValue) );
+          svgDark = src(dictionary.properties);
+          
+          const outputPath = `${buildPath||''}${name}-dark.svg`;
+          fs.ensureFileSync(outputPath);
+          fs.writeFileSync(outputPath, svgDark);
+          console.log(`✔︎  ${outputPath}`);
+        }
+        
+        if (hcDarkValue) {
+          const src = template( fs.readFileSync(hcDarkValue) );
+          svgHcDark = src(dictionary.properties);
+          
+          const outputPath = `${buildPath||''}${name}-hc-dark.svg`;
+          fs.ensureFileSync(outputPath);
+          fs.writeFileSync(outputPath, svgDark);
+          console.log(`✔︎  ${outputPath}`);
+        }
+        
+        if (hcValue) {
+          const src = template( fs.readFileSync(hcValue) );
+          svgHc = src(dictionary.properties);
+          
+          const outputPath = `${buildPath||''}${name}-hc.svg`;
+          fs.ensureFileSync(outputPath);
+          fs.writeFileSync(outputPath, svgDark);
+          console.log(`✔︎  ${outputPath}`);
+        }
+        
         // This will take the SVG and convert it into Android Vector Drawable format
-        androidVector({ androidPath, name, svg });
+        androidVector({ androidPath, name, svg, svgDark, svgHc, svgHcDark });
         
         // This will take the SVG and convert it to a PNG and create the metadata
         // for an iOS imageset
-        iosImageset({ iosPath, name, svg });
+        iosImageset({ iosPath, name, svg, svgDark, svgHc, svgHcDark });
       });
   },
   

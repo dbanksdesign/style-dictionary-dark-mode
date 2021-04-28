@@ -8,6 +8,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy({
     "node_modules/style-dictionary-dark-mode/web/dist/variables.css": "css/variables.css",
+    "node_modules/style-dictionary-dark-mode/web/dist/variables-dark.css": "css/variables-dark.css",
     "node_modules/style-dictionary-dark-mode/web/dist/images": "images"
   });
 }

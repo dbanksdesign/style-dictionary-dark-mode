@@ -7,7 +7,13 @@
       "border-radius": { "value": "{size.border.radius.small.value}" },
       
       "primary": {
-        "background-color": { "value": "{color.background.interactive.value}" },
+        "background-color": {
+          "value": "{color.background.interactive.value}",
+          // Just to show how you would change a component token in dark mode
+          // let's change the primary button's background color to our
+          // secondary brand color
+          "darkValue": "{color.brand.secondary.base.darkValue}"
+        },
         "color": { "value": "{color.font.inverse.value}" },
         
         // hover state
