@@ -1,0 +1,7 @@
+{
+  "image": {
+    "logo": { "value": "assets/svg/logo.svg" },
+    "empty": { "value": "assets/svg/empty.svg" },
+    "files": { "value": "assets/svg/files.svg" },
+  },
+}

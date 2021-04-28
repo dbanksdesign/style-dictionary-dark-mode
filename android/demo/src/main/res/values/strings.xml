@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">StyleDictionaryDarkMode</string>
+    <string name="title_home">Home</string>
+    <string name="title_tokens">Tokens</string>
+    <string name="title_components">Components</string>
+    <string name="title_graphics">Graphics</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_fragment_welcome">Dark mode with Style Dictionary</string>
+    <string name="font_color_example">Aa</string>
+</resources>

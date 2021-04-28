@@ -1,0 +1,17 @@
+{
+  "size": {
+    "border": {
+      "width": {
+        "small": { "value": 0.0625 },
+        "medium": { "value": 0.125 },
+        "large": { "value": 0.25 }
+      },
+      
+      "radius": {
+        "small": { "value": 0.25 },
+        "medium": { "value": 1 },
+        "large": { "value": 3 }
+      }
+    }
+  }
+}

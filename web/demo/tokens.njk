@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+eleventyNavigation:
+  key: Tokens
+  order: 1
+---
+
+<h1>Tokens</h1>
+
+<section class="columns">
+  <section class="column">
+    <h2>Background</h2>
+    {% for color in color.background %}
+    <div class="background-color-token color-token" style="background-color: var(--{{color}})">
+      <div class="color-token-name">{{ color }}</div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="column">
+    <h2>Border</h2>
+    {% for color in color.border %}
+    <div class="color-token border" style="border-color: var(--{{color}})">
+      <div class="color-token-name">{{ color }}</div>
+    </div>
+    {% endfor %}
+  </section>
+  
+  <section class="column">
+    <h2>Font</h2>
+    {% for color in color.font %}
+    <div class="color-token font" style="color: var(--{{color}})">
+      <div class="color-token-name">{{ color }}</div>
+    </div>
+    {% endfor %}
+  </section>
+</section>
+<section class="columns">
+  <section class="column">
+    <h2>Brand Primary</h2>
+    {% for color in color.brandPrimary %}
+    <div class="color-token brand" style="background-color: var(--{{color}})">
+      <div class="color-token-name">{{ color }}</div>
+    </div>
+    {% endfor %}
+  </section>
+  <section class="column">
+    <h2>Brand Secondary</h2>
+    {% for color in color.brandSecondary %}
+    <div class="color-token brand" style="background-color: var(--{{color}})">
+      <div class="color-token-name">{{ color }}</div>
+    </div>
+    {% endfor %}
+  </section>
+</section>
