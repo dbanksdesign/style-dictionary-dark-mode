@@ -1,0 +1,10 @@
+{
+  "color": {
+    "border": {
+      // These will be used in high-contrast light mode
+      "primary": { "value": "{color.core.neutral.600.value}" },
+      "secondary": { "value": "{color.core.neutral.400.value}" },
+      "tertiary": { "value": "{color.core.neutral.200.value}" },
+    }
+  }
+}

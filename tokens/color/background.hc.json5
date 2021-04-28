@@ -1,0 +1,10 @@
+{
+  "color": {
+    "background": {
+      // This will get used in high-contrast light mode
+      "primary": { "value": "{color.core.white.value}" },
+      "secondary": { "value": "{color.core.neutral.200.value}" },
+      "tertiary": { "value": "{color.core.neutral.400.value}" },
+    }
+  }
+}
