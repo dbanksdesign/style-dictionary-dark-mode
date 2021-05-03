@@ -38,7 +38,7 @@ module.exports = {
         let svgDark, svgHc, svgHcDark;
         
         // Make sure the directory exists and write the new SVG file
-        const outputPath = `${buildPath||''}${name}.svg`;
+        const outputPath = `${buildPath||''}${name}-light.svg`;
         fs.ensureFileSync(outputPath);
         fs.writeFileSync(outputPath, svg);
         console.log(`✔︎  ${outputPath}`);
@@ -59,7 +59,7 @@ module.exports = {
           
           const outputPath = `${buildPath||''}${name}-hc-dark.svg`;
           fs.ensureFileSync(outputPath);
-          fs.writeFileSync(outputPath, svgDark);
+          fs.writeFileSync(outputPath, svgHcDark);
           console.log(`✔︎  ${outputPath}`);
         }
         
@@ -69,7 +69,7 @@ module.exports = {
           
           const outputPath = `${buildPath||''}${name}-hc.svg`;
           fs.ensureFileSync(outputPath);
-          fs.writeFileSync(outputPath, svgDark);
+          fs.writeFileSync(outputPath, svgHc);
           console.log(`✔︎  ${outputPath}`);
         }
         

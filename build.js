@@ -41,6 +41,48 @@ function darkFormatWrapper(format) {
   }
 }
 
+function hcFormatWrapper(format) {
+  return function(args) {
+    const dictionary = Object.assign({}, args.dictionary);
+    // Override each token's `value` with `hcValue`
+    dictionary.allProperties = dictionary.allProperties.map(token => {
+      const {hcValue} = token;
+      if (hcValue) {
+        return Object.assign({}, token, {
+          value: token.hcValue
+        });
+      } else {
+        return token;
+      }
+    });
+    
+    // Use the built-in format but with our customized dictionary object
+    // so it will output the hcValue instead of the value
+    return StyleDictionary.format[format]({ ...args, dictionary })
+  }
+}
+
+function hcDarkFormatWrapper(format) {
+  return function(args) {
+    const dictionary = Object.assign({}, args.dictionary);
+    // Override each token's `value` with `hcDarkValue`
+    dictionary.allProperties = dictionary.allProperties.map(token => {
+      const {hcDarkValue} = token;
+      if (hcDarkValue) {
+        return Object.assign({}, token, {
+          value: token.hcDarkValue
+        });
+      } else {
+        return token;
+      }
+    });
+    
+    // Use the built-in format but with our customized dictionary object
+    // so it will output the hcValue instead of the value
+    return StyleDictionary.format[format]({ ...args, dictionary })
+  }
+}
+
 StyleDictionary.extend({
   // custom actions
   action: {
@@ -59,6 +101,8 @@ StyleDictionary.extend({
     swiftImage: require('./formats/swiftImage'),
     androidDark: darkFormatWrapper(`android/resources`),
     cssDark: darkFormatWrapper(`css/variables`),
+    cssHcDark: hcDarkFormatWrapper(`css/variables`),
+    cssHc: hcFormatWrapper(`css/variables`),
   },
   
   source: [
@@ -79,6 +123,14 @@ StyleDictionary.extend({
         destination: `variables-dark.css`,
         format: `cssDark`,
         filter: (token) => token.darkValue && token.attributes.category === `color`
+      },{
+        destination: `variables-hc.css`,
+        format: `cssHc`,
+        filter: (token) => token.hcValue && token.attributes.category === `color`
+      },{
+        destination: `variables-hc-dark.css`,
+        format: `cssHcDark`,
+        filter: (token) => token.hcDarkValue && token.attributes.category === `color`
       }]
     },
     

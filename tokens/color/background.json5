@@ -10,7 +10,7 @@
         // another token's value it will already be transformed. 
         "hcValue": "{color.core.white.value}",
         "darkValue": "{color.core.neutral.1000.value}",
-        "hcdarkValue": "{color.core.black.value}"
+        "hcDarkValue": "{color.core.black.value}"
       },
       "secondary": {
         "value": "{color.core.neutral.100.value}",
