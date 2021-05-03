@@ -1,7 +1,22 @@
 {
   "image": {
-    "logo": { "value": "assets/svg/logo.svg" },
-    "empty": { "value": "assets/svg/empty.svg" },
-    "files": { "value": "assets/svg/files.svg" },
-  },
+    "logo": {
+      "value": "assets/svg/logo.svg",
+      "hcValue": "assets/svg/logo.hc.svg",
+      "darkValue": "assets/svg/logo.dark.svg",
+      "hcDarkValue": "assets/svg/logo.hcDark.svg",
+    },
+    "empty": {
+      "value": "assets/svg/empty.svg",
+      "hcValue": "assets/svg/empty.hc.svg",
+      "darkValue": "assets/svg/empty.dark.svg",
+      "hcDarkValue": "assets/svg/empty.hcDark.svg",
+    },
+    "files": {
+      "value": "assets/svg/files.svg",
+      "hcValue": "assets/svg/files.hc.svg",
+      "darkValue": "assets/svg/files.dark.svg",
+      "hcDarkValue": "assets/svg/files.hcDark.svg",
+    },
+  }
 }
