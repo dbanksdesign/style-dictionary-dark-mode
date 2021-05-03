@@ -201,6 +201,19 @@ styleDictionary.extend({
   ],
   
   platforms: {
+    css: {
+      transformGroup: `css`,
+      buildPath: webPath,
+      files: [{
+        destination: `variables-hc-dark.css`,
+        format: `css/variables`,
+        filter: (token) => token.filePath.indexOf(`.hcDark`) > -1,
+        options: {
+          outputReferences: true
+        }
+      }]
+    },
+    
     // Because iOS only has good support for high-contrast modes
     // we will only build the necessary files for iOS:
     assets: Object.assign(assets, {
@@ -225,6 +238,19 @@ styleDictionary.extend({
   ],
   
   platforms: {
+    css: {
+      transformGroup: `css`,
+      buildPath: webPath,
+      files: [{
+        destination: `variables-hc.css`,
+        format: `css/variables`,
+        filter: (token) => token.filePath.indexOf(`.hc`) > -1,
+        options: {
+          outputReferences: true
+        }
+      }]
+    },
+    
     assets: Object.assign(assets, {
       mode: `hc`
     }),
