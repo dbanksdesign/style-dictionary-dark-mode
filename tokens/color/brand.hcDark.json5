@@ -1,0 +1,26 @@
+{
+  "color": {
+    "brand": {
+      // These will be used in high-contrast dark mode
+      "primary": {
+        "base": { "value": "{color.brand.primary.2.value}" },
+        "dark": { "value": "{color.brand.primary.4.value}" },
+        "0": { "value": "{color.core.pink.0.value}" },
+        "1": { "value": "{color.core.pink.200.value}" },
+        "2": { "value": "{color.core.pink.400.value}" },
+        "3": { "value": "{color.core.pink.700.value}" },
+        "4": { "value": "{color.core.pink.1000.value}" },
+      },
+      
+      "secondary": {
+        "base": { "value": "{color.brand.secondary.2.value}" },
+        "dark": { "value": "{color.brand.secondary.4.value}" },
+        "0": { "value": "{color.core.purple.0.value}" },
+        "1": { "value": "{color.core.purple.200.value}" },
+        "2": { "value": "{color.core.purple.400.value}" },
+        "3": { "value": "{color.core.purple.700.value}" },
+        "4": { "value": "{color.core.purple.1000.value}" },
+      }
+    }
+  }
+}

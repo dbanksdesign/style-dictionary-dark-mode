@@ -13,7 +13,7 @@ module.exports = {
   // and resolved dictionary object containing all the tokens and the platform configuration
   // of the platform that called this action. 
   do: (dictionary, config) => {
-    const { androidPath, iosPath, buildPath } = config;
+    const { androidPath, iosPath, buildPath, mode } = config;
     
     dictionary.allProperties
       .filter(token => {
@@ -37,17 +37,17 @@ module.exports = {
         const svg = src(dictionary.properties);
         
         // Make sure the directory exists and write the new SVG file
-        const outputPath = `${buildPath||''}${name}.svg`;
+        const outputPath = `${buildPath||''}${name}-${mode}.svg`;
         fs.ensureFileSync(outputPath);
         fs.writeFileSync(outputPath, svg);
         console.log(`✔︎  ${outputPath}`);
         
         // This will take the SVG and convert it into Android Vector Drawable format
-        androidVector({ androidPath, name, svg });
+        androidVector({ androidPath, name, svg, mode });
         
         // This will take the SVG and convert it to a PNG and create the metadata
         // for an iOS imageset
-        iosImageset({ iosPath, name, svg });
+        iosImageset({ iosPath, name, svg, mode });
       });
   },
   

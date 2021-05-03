@@ -1,0 +1,10 @@
+{
+  "color": {
+    "font": {
+      // These will be used in high-contrast light mode
+      "primary": { "value": "{color.core.neutral.1000.value}" },
+      "secondary": { "value": "{color.core.neutral.900.value}" },
+      "tertiary": { "value": "{color.core.neutral.800.value}" },
+    }
+  }
+}

@@ -5,6 +5,8 @@
       "secondary": { "value": "{color.core.neutral.200.value}" },
       "tertiary": { "value": "{color.core.neutral.100.value}" },
       
+      // because these tokens already reference ones with dark values
+      // we don't need to define dark values for them in border.dark.json5
       "interactive": { "value": "{color.brand.primary.base.value}" },
       "hover": { "value": "{color.brand.primary.dark.value}" },
       "active": { "value": "{color.brand.secondary.base.value}" },

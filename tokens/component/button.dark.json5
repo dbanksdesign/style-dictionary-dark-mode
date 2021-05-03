@@ -1,0 +1,18 @@
+// This would define any button-specific overrides you would want to have
+// Ideally you would want to keep component-specific dark mode overrides
+// to a minimum and rely on the semantic layer:
+// color.border, color.background, color.font, color.brand
+{
+  "component": {
+    "button": {
+      "primary": {
+        "background-color": {
+          // Just to show how you would change a component token in dark mode
+          // let's change the primary button's background color to our
+          // secondary brand color
+          "value": "{color.brand.secondary.base.value}"
+        }
+      }
+    }
+  }
+}

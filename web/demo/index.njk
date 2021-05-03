@@ -8,4 +8,17 @@ eleventyNavigation:
 
 <h1>Dark mode with Style Dictionary</h1>
 
-<img style="width: 15rem" src="images/logo.svg" />
+<picture>
+  <!--
+  There can only be a single image source (unlike CSS files which multiple can be loaded).
+  The first <source> that matches the media query wins, so for high contrast mode we need to 
+  be very explicit here...
+  -->
+  <source srcset="/images/logo-hc.svg" media="(prefers-contrast: more) and (prefers-color-scheme: light)">
+  <source srcset="/images/logo-hcDark.svg" media="(prefers-contrast: more) and (prefers-color-scheme: dark)">
+  <!-- Use this image if the user's OS setting is light or unset -->
+  <source srcset="/images/logo-light.svg" media="(prefers-color-scheme: light)">
+  <!-- Use this image if the user's OS setting is dark -->
+  <source srcset="/images/logo-dark.svg" media="(prefers-color-scheme: dark)">
+  <img style="width: 15rem" src="images/logo-light.svg" />
+</picture>
